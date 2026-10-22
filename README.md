@@ -23,6 +23,7 @@ docs/catalog.json                 当前公开快照
 docs/schema.json                  Schema V2
 docs/images/banks/<name>.webp     银行 Logo
 docs/images/cards/<name>.webp     官方卡面
+scripts/catalog_asset.py          图片去元数据/重编码并计算 asset
 scripts/validate_catalog.py       发布前校验（无第三方依赖）
 .github/workflows/validate.yml    CI：结构、引用、图片和版本校验
 archive/                          历史快照（可选）
@@ -58,30 +59,22 @@ archive/                          历史快照（可选）
 }
 ```
 
-`bankID` 必须引用同一快照中的银行。图片路径只能是相对路径，不能是绝对 URL、跨域地址或包含 `..`；App 会拒绝不符合规则的资源。图片格式支持 PNG、JPEG 和 WebP，单张不超过 4 MB、边长不超过 2400 px。
+`bankID` 必须引用同一快照中的银行。图片路径只能是相对路径，不能是绝对 URL、跨域地址或包含 `..`；App 会拒绝不符合规则的资源。App 采用有上限的流式下载，限制同源重定向，并按 SHA-256 校验后才写入磁盘缓存。图片格式支持 PNG、JPEG 和 WebP，单张不超过 4 MB、边长不超过 2400 px；缓存超出容量预算时只回收无引用资源。
 
 ## 新增银行或产品
 
-1. 在 CardPilot 主仓库准备官方 JSON 与图片，更新 `App/Resources/Catalog/catalog.json`。保持银行、产品、活动的稳定 ID。
-2. 将图片处理为无 EXIF 的公开资源，计算路径与 SHA-256。可使用主仓库工具：
+本仓库是官方资料的唯一维护源。不要先编辑 App 再生成云端快照；App 的内置资料由维护者从本仓库导入。
+
+1. 在 `docs/catalog.json` 中新增或修改银行、产品和活动，保持稳定 ID；`bankID` 必须引用同一快照中的银行。
+2. 用本仓库工具处理官方图片，自动去除 EXIF、重编码到 PNG/JPEG/WebP，并输出 asset JSON：
 
    ```bash
    python3 scripts/catalog_asset.py ~/Downloads/new-card.png docs/images/cards/new-card.webp
    ```
 
-   将输出的 `path`、`sha256`、`contentType` 填进 Catalog 的 `artwork`。
+   Pillow 是明确依赖；缺失时脚本会报错，不会静默复制原图。根据输出把 `path`、`sha256`、`contentType` 写入 `artwork` 或 `logo`，旧图片文件可以删除，同一 SHA-256 只保留一份。
 
-3. 从主仓库生成公开快照并复制图片：
-
-   ```bash
-   python3 script/build_catalog_snapshot.py \
-     --output ../CardPilot-Catalog/docs/catalog.json \
-     --content-version 2026102401 --published-at 2026-10-24
-   ```
-
-   `contentVersion` 必须大于线上版本，建议使用 `YYYYMMDDNN`。脚本会验证每张图片存在且 SHA-256 与 JSON 一致，并以原子方式写出快照。
-
-4. 在公开仓库运行校验：
+3. 发布前运行校验：
 
    ```bash
    python3 scripts/validate_catalog.py docs/catalog.json --base /tmp/previous-catalog.json
@@ -89,7 +82,16 @@ archive/                          历史快照（可选）
 
    没有旧版时可省略 `--base`。校验会检查 Schema、ID 唯一性与引用、图片路径/格式/尺寸/体积/hash、活动日期与 URL、隐私字段和版本递增。
 
-5. 提交 `docs/catalog.json`、`docs/images/` 相关变更并推送 `main`。GitHub Actions 会自动复跑校验，GitHub Pages 随后发布 `docs/`。
+4. 提交 `docs/catalog.json`、`docs/images/` 相关变更并推送 `main`。GitHub Actions 会自动复跑校验，GitHub Pages 随后发布 `docs/`。
+
+5. 同步 App 离线回退资料（在 CardPilot 主仓库运行；公开仓库仍是唯一维护源）：
+
+   ```bash
+   python3 script/import_catalog_snapshot.py
+   ```
+
+   该脚本会校验公开快照的每一张图片和 SHA-256，再原子替换 `App/Resources/Catalog/`。只有需要更新内置离线资料时才需要提交 App 变更。
+
 6. 用 `curl` 确认线上版本：
 
    ```bash
