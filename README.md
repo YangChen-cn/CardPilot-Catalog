@@ -86,7 +86,8 @@ archive/                          历史快照（可选）
    python3 scripts/validate_catalog.py docs/catalog.json --base /tmp/previous-catalog.json
    ```
 
-   没有旧版时可省略 `--base`。校验会检查 Schema、ID 唯一性与引用、图片路径/格式/尺寸/体积/hash、活动日期与 URL、隐私字段和版本递增。
+   没有旧版时可省略 `--base`。校验会检查 Schema、ID 唯一性与引用、图片路径/格式/尺寸/体积/hash、活动日期与 URL、支付方式契约、隐私字段和版本递增。
+   支付方式必须使用 canonical 标签（例如 `UnionPay`、`Apple Pay`、`支付宝`）。`UnionPay App`、`云闪付` 等输入别名由客户端统一匹配，但发布快照应写 `UnionPay`；CI 会在合并前拒绝不符合契约的值。
 
 4. 提交 `docs/catalog.json`、`docs/images/` 相关变更并推送 `main`。GitHub Actions 会自动复跑校验，GitHub Pages 随后发布 `docs/`。
 

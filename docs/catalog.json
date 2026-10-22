@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "contentVersion": 2026102305,
+  "contentVersion": 2026102306,
   "publishedAt": "2026-10-23",
   "banks": [
     {
@@ -395,7 +395,7 @@
               ],
               "paymentMethods": [
                 "Apple Pay",
-                "云闪付"
+                "UnionPay"
               ],
               "capScope": "hsbc.pulse.cn-mo.2026h2",
               "excludedPaymentMethods": [
@@ -697,7 +697,7 @@
               "paymentMethods": [
                 "Apple Pay",
                 "Huawei Pay",
-                "云闪付",
+                "UnionPay",
                 "BoC Pay"
               ],
               "excludedCategories": [
@@ -731,7 +731,7 @@
               "paymentMethods": [
                 "Apple Pay",
                 "Huawei Pay",
-                "云闪付"
+                "UnionPay"
               ],
               "excludedCategories": [
                 "缴费"
@@ -810,7 +810,7 @@
               "paymentMethods": [
                 "Apple Pay",
                 "Huawei Pay",
-                "云闪付",
+                "UnionPay",
                 "BoC Pay"
               ],
               "excludedCategories": [
@@ -844,7 +844,7 @@
               "paymentMethods": [
                 "Apple Pay",
                 "Huawei Pay",
-                "云闪付"
+                "UnionPay"
               ],
               "excludedCategories": [
                 "缴费"
@@ -960,7 +960,7 @@
               "paymentMethods": [
                 "Apple Pay",
                 "Huawei Pay",
-                "云闪付"
+                "UnionPay"
               ],
               "excludedCategories": [
                 "缴费"
@@ -1238,7 +1238,7 @@
             "ratePercent": 0.8,
             "capHKD": 400,
             "sharedCapGroup": "bea-udc-extra",
-            "paymentMethod": "云闪付",
+            "paymentMethod": "UnionPay",
             "calculation": {
               "rewardBasis": "faceValue",
               "excludedCategories": [
@@ -1453,7 +1453,7 @@
             "ratePercent": 0.8,
             "capHKD": 400,
             "sharedCapGroup": "bea-udc-extra",
-            "paymentMethod": "云闪付",
+            "paymentMethod": "UnionPay",
             "calculation": {
               "rewardBasis": "faceValue",
               "excludedCategories": [
@@ -1653,7 +1653,7 @@
             "capHKD": 150,
             "capPeriod": "monthly",
             "sharedCapGroup": "cncbi-4",
-            "paymentMethod": "云闪付",
+            "paymentMethod": "UnionPay",
             "notes": "以云闪付App展示付款码、由商户扫描的合资格实体零售交易，可享合共4%（基础0.4%加额外3.6%），与人民币4%回赠共用每历月额外HK$150上限。用户扫描商户码、账单缴费、服务／慈善、交通、网购等云闪付交易不合资格。符合人民币及云闪付资格的同一笔消费只计一次；不应把两条4%规则相加。活动开始日官方仅列「即日起」，保留未知。"
           },
           {

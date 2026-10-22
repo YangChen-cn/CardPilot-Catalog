@@ -23,6 +23,15 @@ PRIVATE_KEYS = {
     "cardOverride", "welcomeTracking",
 }
 MAX_IMAGE_BYTES = 4_000_000
+PAYMENT_METHODS = {
+    "待确认", "Apple Pay", "实体卡", "网上支付", "支付宝", "微信支付",
+    "UnionPay", "BoC Pay", "Huawei Pay", "PayMe",
+}
+
+
+def validate_payment_method(value: object, label: str) -> None:
+    require(isinstance(value, str) and value in PAYMENT_METHODS,
+            f"{label} must be one of {sorted(PAYMENT_METHODS)}; use UnionPay for all UnionPay labels")
 MAX_IMAGE_DIMENSION = 2400
 
 
@@ -152,6 +161,15 @@ def validate_rule(rule: object, label: str, seen: set[str]) -> None:
     for field in ("startsOn", "endsOn"):
         if rule.get(field) is not None:
             parse_date(rule[field], f"{label}/{rule_id}.{field}")
+    if rule.get("paymentMethod") not in (None, ""):
+        validate_payment_method(rule["paymentMethod"], f"{label}/{rule_id}.paymentMethod")
+    calculation = rule.get("calculation")
+    if isinstance(calculation, dict):
+        for field in ("paymentMethods", "excludedPaymentMethods"):
+            values = calculation.get(field, [])
+            require(isinstance(values, list), f"{label}/{rule_id}.{field} must be an array")
+            for value in values:
+                validate_payment_method(value, f"{label}/{rule_id}.{field}[]")
 
 
 def main() -> int:

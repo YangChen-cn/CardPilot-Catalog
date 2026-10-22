@@ -238,7 +238,21 @@
           "type": "string"
         },
         "paymentMethod": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "待确认",
+            "Apple Pay",
+            "实体卡",
+            "网上支付",
+            "支付宝",
+            "微信支付",
+            "UnionPay",
+            "BoC Pay",
+            "Huawei Pay",
+            "PayMe",
+            ""
+          ],
+          "description": "Use the canonical UnionPay label; UnionPay App and 云闪付 are aliases accepted by the client but not published."
         },
         "merchantKeywords": {
           "type": "array",
