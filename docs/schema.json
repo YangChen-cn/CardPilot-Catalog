@@ -53,7 +53,8 @@
           "enum": [
             "hsbc",
             "bochk",
-            "bea"
+            "bea",
+            "cncbi"
           ]
         },
         "imageResource": {

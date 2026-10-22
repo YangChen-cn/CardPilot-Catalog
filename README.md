@@ -65,7 +65,7 @@ archive/                    历史快照（按 contentVersion 命名）
 | 字段 | 说明 |
 | --- | --- |
 | `id` | 稳定产品 ID，与 App 现有 `catalogID` 一致 |
-| `bankID` | `hsbc`、`bochk` 或 `bea` |
+| `bankID` | `hsbc`、`bochk`、`bea` 或 `cncbi` |
 | `imageResource` | App 内置卡面文件名，远程不传图片 |
 | `baseRewardVerified` | 基础权益是否已核实；未核实不参与展示金额 |
 | `welcomePlans` | 官方迎新方案，沿用 App 的 `WelcomePlan` 结构 |

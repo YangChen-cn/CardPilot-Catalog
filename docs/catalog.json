@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": 2026102202,
+  "contentVersion": 2026102301,
   "publishedAt": "2026-10-23",
   "products": [
     {
@@ -1297,6 +1297,136 @@
         ],
         "caveats": "日常签账规则与UDC钻石普通版相同。学生迎新为HK$100及CNY100两个独立分项，不能套用普通版HK$400及CNY400；两种货币须分别达标。按已更新官方迎新PDF采用发卡日起3个月，产品网页仍有旧2个月文字；申领前须向银行确认。积分按现金等值估算，超市、旅行社、政府、循环、自动转账等不享额外奖赏，保险等消费另有资格限制，须核对条款。",
         "annualFeeNote": "学生主卡永久免年费"
+      }
+    },
+    {
+      "id": "bochk.mastercard.debit",
+      "bankID": "bochk",
+      "imageResource": "bochk-mastercard-debit.png",
+      "baseRewardVerified": true,
+      "welcomePlans": [],
+      "catalog": {
+        "id": "bochk.mastercard.debit",
+        "name": "中银万事达卡扣账卡",
+        "bank": "BOCHK 中银香港",
+        "network": "Mastercard",
+        "kind": "借记卡",
+        "sourceURL": "https://www.bochk.com/dam/more/bocdebitcard/card/tc.html",
+        "verifiedOn": "2026-10-23",
+        "baseRatePercent": 0.5,
+        "foreignFeePercent": 0,
+        "overseasHKDFeePercent": 0,
+        "annualFeeNote": "免年费；扣账卡不设信用额度",
+        "caveats": "基本现金回赠0.5%不设上限；中银私人财富客户可享额外0.5%，合共最高1%，须符合相关推广条款。12种主要货币的外币交易费用获豁免；其他货币、动态货币兑换（DCC）及商户结算安排以银行收费表为准。",
+        "rules": []
+      }
+    },
+    {
+      "id": "cncbi.gba.dual",
+      "bankID": "cncbi",
+      "imageResource": "cncbi-gba-dual.png",
+      "baseRewardVerified": true,
+      "welcomePlans": [],
+      "catalog": {
+        "id": "cncbi.gba.dual",
+        "name": "GBA 双币卡",
+        "bank": "CNCBI 信银国际",
+        "network": "UnionPay",
+        "sourceURL": "https://www.cncbinternational.com/personal/promotions/credit-card/tc/index.html?SOURCE=ATJ15",
+        "verifiedOn": "2026-10-21",
+        "baseRatePercent": 0.4,
+        "foreignFeePercent": 0,
+        "overseasHKDFeePercent": 0,
+        "calculation": {
+          "cnyFeeBps": 0,
+          "baseRewardBasis": "faceValue",
+          "baseCapUsesCreditLimit": true,
+          "baseCapPeriod": "statement"
+        },
+        "rules": [
+          {
+            "id": "cny4",
+            "name": "人民币签账额外3.6%（连基础共4%）",
+            "kind": "cashback",
+            "startsOn": "2026-10-21",
+            "endsOn": "2026-12-31",
+            "sourceURL": "https://www.cncbinternational.com/personal/promotions/credit-card/tc/index.html?SOURCE=ATJ15",
+            "ratePercent": 3.6,
+            "currency": "CNY",
+            "capHKD": 150,
+            "sharedCapGroup": "cncbi-4",
+            "calculation": {
+              "rateMode": "extra",
+              "rewardBasis": "faceValue",
+              "excludedCategories": [
+                "缴费"
+              ]
+            },
+            "group": "limited"
+          },
+          {
+            "id": "cny6",
+            "name": "单笔满CNY4,000额外6%",
+            "kind": "cashback",
+            "startsOn": "2026-10-21",
+            "endsOn": "2026-12-31",
+            "sourceURL": "https://www.cncbinternational.com/personal/promotions/credit-card/tc/index.html?SOURCE=ATJ15",
+            "ratePercent": 6,
+            "currency": "CNY",
+            "capHKD": 250,
+            "calculation": {
+              "rateMode": "extra",
+              "stackingGroup": "cny-large",
+              "minimumOriginalCents": 400000,
+              "rewardBasis": "faceValue",
+              "excludedCategories": [
+                "缴费"
+              ],
+              "excludedPaymentMethods": [
+                "支付宝",
+                "微信支付",
+                "PayMe"
+              ]
+            },
+            "group": "limited"
+          },
+          {
+            "id": "welcome600",
+            "name": "迎新消费HK$6,000奖励HK$600",
+            "kind": "welcome",
+            "startsOn": "2026-10-21",
+            "endsOn": "2026-12-31",
+            "sourceURL": "https://www.cncbinternational.com/personal/promotions/credit-card/tc/index.html?SOURCE=ATJ15",
+            "ratePercent": 0,
+            "thresholdHKD": 6000,
+            "bonusHKD": 600,
+            "requiresPersonalDates": true,
+            "group": "welcome"
+          }
+        ],
+        "caveats": "基础0.4%按共享信用额及账单周期设上限。人民币额外3.6%与大额额外6%各有适用条件；雲閃付商户扫付款码活动与其他迎新选项尚待单独核实。迎新方案须按银行条款选择，当前资料列示固定HK$600方案，个人消费期按实际申请及发卡资料核对。"
+      }
+    },
+    {
+      "id": "cncbi.multi-currency.debit",
+      "bankID": "cncbi",
+      "imageResource": "cncbi-multi-currency-debit.png",
+      "baseRewardVerified": true,
+      "welcomePlans": [],
+      "catalog": {
+        "id": "cncbi.multi-currency.debit",
+        "name": "多币扣账卡（Mastercard）",
+        "bank": "CNCBI 信银国际",
+        "network": "Mastercard",
+        "kind": "借记卡",
+        "sourceURL": "https://www.cncbinternational.com/personal/multi-currency-debit-card/tc/index.html",
+        "verifiedOn": "2026-10-23",
+        "baseRatePercent": 0.2,
+        "foreignFeePercent": 1.95,
+        "overseasHKDFeePercent": 0,
+        "annualFeeNote": "扣账卡不设信用额度；须持有有效的单名综合货币结算储蓄存款户口",
+        "caveats": "支援港元、人民币、美元、澳元、加元、欧元、英镑、日圆、纽元和新加坡元共10种货币直接扣账。基本现金回赠0.2%不设上限；经Mastercard网络交易如涉及外币兑换，收取1.95%外币交易费。汇率、合资格交易及回赠安排以银行最新条款为准。",
+        "rules": []
       }
     }
   ]

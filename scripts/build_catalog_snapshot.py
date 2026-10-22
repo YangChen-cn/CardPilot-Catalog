@@ -21,7 +21,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 RESOURCES = ROOT / "App" / "Resources"
 MANIFESTS = [RESOURCES / "BankLibrary" / "hsbc-products.json",
-             RESOURCES / "BankLibrary" / "bochk-bea-products.json"]
+             RESOURCES / "BankLibrary" / "bochk-bea-products.json",
+             RESOURCES / "BankLibrary" / "cncbi-products.json"]
 HTTPS = re.compile(r"^https://[^\s]+$")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -119,8 +120,8 @@ def main() -> int:
 
     if not products:
         fail("no products found")
-    if len({product["bankID"] for product in products}) != 3:
-        fail("expected exactly the hsbc, bochk and bea banks")
+    if len({product["bankID"] for product in products}) != 4 or {product["bankID"] for product in products} != {"hsbc", "bochk", "bea", "cncbi"}:
+        fail("expected exactly the hsbc, bochk, bea and cncbi banks")
 
     document = {
         "schemaVersion": 1,

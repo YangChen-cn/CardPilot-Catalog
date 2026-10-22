@@ -10,11 +10,12 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
-BANKS = {"hsbc", "bochk", "bea"}
+BANKS = {"hsbc", "bochk", "bea", "cncbi"}
 IMAGES = {
     "hsbc-student.jpg", "hsbc-pulse.png", "hsbc-mastercard-debit.jpg",
     "bochk-chill-platinum.png", "bochk-go-diamond.png", "bochk-go-platinum.png",
     "bochk-gba-youth.png", "bea-hku-student.png", "bea-udc-diamond.png",
+    "bochk-mastercard-debit.png", "cncbi-gba-dual.png", "cncbi-multi-currency-debit.png",
 }
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 VERSION = re.compile(r"^[1-9]\d{0,17}$")
