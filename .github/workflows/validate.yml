@@ -26,10 +26,20 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate schema, artwork and version
+        env:
+          BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event.before }}
         run: |
-          if git cat-file -e origin/main:docs/catalog.json 2>/dev/null; then
-            git show origin/main:docs/catalog.json > /tmp/base-catalog.json
-            python3 scripts/validate_catalog.py docs/catalog.json --base /tmp/base-catalog.json
+          BASE_FILE=/tmp/base-catalog.json
+          if [ -z "$BASE_REF" ] || [ "$BASE_REF" = "0000000000000000000000000000000000000000" ]; then
+            BASE_REF=HEAD^
+          fi
+          if git cat-file -e "$BASE_REF:docs/catalog.json" 2>/dev/null; then
+            git show "$BASE_REF:docs/catalog.json" > "$BASE_FILE"
+            if cmp -s docs/catalog.json "$BASE_FILE"; then
+              python3 scripts/validate_catalog.py docs/catalog.json
+            else
+              python3 scripts/validate_catalog.py docs/catalog.json --base "$BASE_FILE"
+            fi
           else
             python3 scripts/validate_catalog.py docs/catalog.json
           fi
