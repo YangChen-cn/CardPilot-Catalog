@@ -27,6 +27,13 @@ PAYMENT_METHODS = {
     "待确认", "Apple Pay", "实体卡", "网上支付", "支付宝", "微信支付",
     "UnionPay", "BoC Pay", "Huawei Pay", "PayMe",
 }
+RULE_KEYS = {
+    "id", "name", "kind", "group", "startsOn", "endsOn", "sourceURL", "ratePercent",
+    "capHKD", "capPeriod", "sharedCapGroup", "thresholdHKD", "bonusHKD", "minimumHKD",
+    "monthlyPhysicalThresholdHKD", "channelCondition", "category", "currency",
+    "paymentMethod", "merchantKeywords", "requiresPersonalDates", "enabled", "notes",
+    "calculation",
+}
 
 
 def validate_payment_method(value: object, label: str) -> None:
@@ -151,6 +158,7 @@ def validate_plan(plan: object, label: str, rule_ids: set[str]) -> str:
 
 def validate_rule(rule: object, label: str, seen: set[str]) -> None:
     require(isinstance(rule, dict), f"{label} must be an object")
+    check_unknown_keys(rule, RULE_KEYS, label)
     rule_id = rule.get("id")
     require(isinstance(rule_id, str) and bool(rule_id) and rule_id not in seen, f"{label}: duplicate or empty rule id")
     seen.add(rule_id)
