@@ -110,9 +110,14 @@ def main() -> int:
                     f"{product_id}: duplicate or empty rule id")
             rule_ids.add(rule_id)
             require(rule.get("kind") in {"cashback", "welcome"}, f"{product_id}/{rule_id}: invalid kind")
+            group = rule.get("group") or ("welcome" if rule.get("kind") == "welcome" else None)
+            require(group in {"daily", "limited", "merchant", "welcome"},
+                    f"{product_id}/{rule_id}: group must be daily, limited, merchant or welcome")
             https(rule.get("sourceURL"), f"{product_id}/{rule_id}.sourceURL")
-            parse_date(rule.get("startsOn"), f"{product_id}/{rule_id}.startsOn")
-            parse_date(rule.get("endsOn"), f"{product_id}/{rule_id}.endsOn")
+            if rule.get("startsOn") is not None:
+                parse_date(rule["startsOn"], f"{product_id}/{rule_id}.startsOn")
+            if rule.get("endsOn") is not None:
+                parse_date(rule["endsOn"], f"{product_id}/{rule_id}.endsOn")
         plan_ids: set[str] = set()
         for plan in plans:
             require(isinstance(plan, dict), f"{product_id}: welcome plan must be an object")
