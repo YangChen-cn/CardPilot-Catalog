@@ -2,16 +2,34 @@ name: Validate catalog
 
 on:
   push:
-    paths: ["docs/catalog.json", "scripts/validate_catalog.py"]
+    paths:
+      - "docs/**"
+      - "scripts/**"
+      - ".github/workflows/validate.yml"
   pull_request:
-    paths: ["docs/catalog.json", "scripts/validate_catalog.py"]
+    paths:
+      - "docs/**"
+      - "scripts/**"
+      - ".github/workflows/validate.yml"
+
+permissions:
+  contents: read
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python3 scripts/validate_catalog.py docs/catalog.json
+      - name: Validate schema, artwork and version
+        run: |
+          if git cat-file -e origin/main:docs/catalog.json 2>/dev/null; then
+            git show origin/main:docs/catalog.json > /tmp/base-catalog.json
+            python3 scripts/validate_catalog.py docs/catalog.json --base /tmp/base-catalog.json
+          else
+            python3 scripts/validate_catalog.py docs/catalog.json
+          fi

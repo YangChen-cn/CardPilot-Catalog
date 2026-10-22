@@ -1,12 +1,83 @@
 {
-  "schemaVersion": 1,
-  "contentVersion": 2026102301,
+  "schemaVersion": 2,
+  "contentVersion": 2026102302,
   "publishedAt": "2026-10-23",
+  "banks": [
+    {
+      "id": "hsbc",
+      "name": "HSBC 汇丰银行",
+      "shortName": "HSBC",
+      "searchTerms": [
+        "汇丰",
+        "香港上海汇丰银行",
+        "HSBC",
+        "香港上海匯豐銀行"
+      ],
+      "logo": {
+        "path": "images/banks/hsbc.png",
+        "sha256": "279e322279dd8bad2843ba837ea9abd7b613070da6ea55bb8a6a8af5d607ade3",
+        "contentType": "image/png"
+      }
+    },
+    {
+      "id": "bochk",
+      "name": "BOCHK 中银香港",
+      "shortName": "BOCHK",
+      "searchTerms": [
+        "中银",
+        "中银香港",
+        "BOC",
+        "中國銀行",
+        "中国银行"
+      ],
+      "logo": {
+        "path": "images/banks/bochk.png",
+        "sha256": "5a1eedd4b6de83d042d371af1c83b1b15debfe4062939af84ea0177f794887cd",
+        "contentType": "image/png"
+      }
+    },
+    {
+      "id": "bea",
+      "name": "BEA 东亚银行",
+      "shortName": "BEA",
+      "searchTerms": [
+        "东亚",
+        "东亚银行",
+        "Bank of East Asia"
+      ],
+      "logo": {
+        "path": "images/banks/bea.png",
+        "sha256": "47671f3e7efde7809c7949c260ce46f715c1fe24d859b1dcad26e6e6610b260b",
+        "contentType": "image/png"
+      }
+    },
+    {
+      "id": "cncbi",
+      "name": "CNCBI 信银国际",
+      "shortName": "CNCBI",
+      "searchTerms": [
+        "中信",
+        "信银",
+        "中信国际",
+        "CITIC",
+        "China CITIC Bank International"
+      ],
+      "logo": {
+        "path": "images/banks/cncbi.png",
+        "sha256": "7b81e29fa401105b18616987c3cbb544b0c3fc86dcea379a68b813370c8d7549",
+        "contentType": "image/png"
+      }
+    }
+  ],
   "products": [
     {
       "id": "hsbc.student.visa.gold",
       "bankID": "hsbc",
-      "imageResource": "hsbc-student.jpg",
+      "artwork": {
+        "path": "images/cards/hsbc-student-visa-gold.jpg",
+        "sha256": "49448f56b8136d8fef39656e5c0f5e8a4cba60f0c884bde249bca9b0c3c6c3b0",
+        "contentType": "image/jpeg"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [
         {
@@ -155,12 +226,21 @@
             "group": "merchant"
           }
         ]
-      }
+      },
+      "searchTerms": [
+        "学生",
+        "Visa Gold",
+        "汇丰学生"
+      ]
     },
     {
       "id": "hsbc.pulse.unionpay.diamond",
       "bankID": "hsbc",
-      "imageResource": "hsbc-pulse.png",
+      "artwork": {
+        "path": "images/cards/hsbc-pulse-unionpay-diamond.png",
+        "sha256": "b8aed2d624819a45d1d33d2a169e834a0f1a707693001353e0985fc83827b4a0",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [
         {
@@ -386,12 +466,23 @@
             "group": "welcome"
           }
         ]
-      }
+      },
+      "searchTerms": [
+        "Pulse",
+        "Pluse",
+        "双币",
+        "钻石",
+        "银联"
+      ]
     },
     {
       "id": "hsbc.mastercard.debit",
       "bankID": "hsbc",
-      "imageResource": "hsbc-mastercard-debit.jpg",
+      "artwork": {
+        "path": "images/cards/hsbc-mastercard-debit.jpg",
+        "sha256": "8930843185ec45397cf2fcb88fa31cd3ce6e4df17828c4c27654559cc0985d5a",
+        "contentType": "image/jpeg"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [],
       "catalog": {
@@ -408,12 +499,22 @@
         "annualFeeNote": "免年费；扣账卡不提供信用额度",
         "caveats": "支持12种货币从对应账户直接扣账，包括HKD、CNY、USD；外币账户不足时可能涉及银行兑换。合资格签账0.4%现金回赠、免外币交易费；非合资格交易按官方条款排除。港币估值不代表实际发生换汇。支付宝推广含绑卡券、即时折扣及指定渠道条件，不视作通用返现。",
         "rules": []
-      }
+      },
+      "searchTerms": [
+        "扣账卡",
+        "借记卡",
+        "Mastercard",
+        "万事达"
+      ]
     },
     {
       "id": "bochk.chill.platinum",
       "bankID": "bochk",
-      "imageResource": "bochk-chill-platinum.png",
+      "artwork": {
+        "path": "images/cards/bochk-chill-platinum.png",
+        "sha256": "81361e9f5cbf7c44e3fb1b28e5e156faee9f3326b604c8736ea7fecfa33c9efc",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [
         {
@@ -509,12 +610,20 @@
             "group": "welcome"
           }
         ]
-      }
+      },
+      "searchTerms": [
+        "Chill",
+        "白金卡"
+      ]
     },
     {
       "id": "bochk.go.diamond",
       "bankID": "bochk",
-      "imageResource": "bochk-go-diamond.png",
+      "artwork": {
+        "path": "images/cards/bochk-go-diamond.png",
+        "sha256": "aa0478d7f67526f3a9760f25b5b1325b1268ab9082cc4601b3423af36a53ecfa",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [
         {
@@ -613,12 +722,21 @@
         ],
         "caveats": "钻石版手机签账3倍积分等值1.2%，与白金版2倍积分等值0.8%不同；每月HK$100等值上限包括基础积分，2026年底前豁免本地消费门槛。须登记的额外积分活动、指定Go商户5%、非人民币外币2倍积分及海外外币费回赠，须分别核对登记要求和适用范围；指定Go商户不可与手机/海外积分优惠叠加。境外HKD交易不额外收取1%；CNY免手续费仅内地交易适用。主附卡共用上限，请核对银行累计记录。",
         "annualFeeNote": "主卡首年免年费；2025-06-01起申请并在收年费时持有中银香港储蓄或往来账户可获豁免"
-      }
+      },
+      "searchTerms": [
+        "GO",
+        "钻石",
+        "银联"
+      ]
     },
     {
       "id": "bochk.go.platinum",
       "bankID": "bochk",
-      "imageResource": "bochk-go-platinum.png",
+      "artwork": {
+        "path": "images/cards/bochk-go-platinum.png",
+        "sha256": "1a4b8c1ec9c2408d994da7433c9db1af6f2a2fb3ec9175952f265b545ed61d22",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [
         {
@@ -717,12 +835,21 @@
         ],
         "caveats": "白金版手机签账2倍积分等值0.8%，不可套用钻石版1.2%；每月HK$100等值上限包括基础积分，2026年底前豁免本地消费门槛。须登记的额外积分活动、指定Go商户5%、非人民币外币2倍积分及海外外币费回赠，须分别核对登记要求和适用范围；指定Go商户不可与手机/海外积分优惠叠加。境外HKD交易不额外收取1%；CNY免手续费仅内地交易适用。银联白金级别礼遇须按白金条款核对，不套用钻石卡权益。主附卡共用上限，请核对银行累计记录。",
         "annualFeeNote": "主卡首年免年费；2025-06-01起申请并在收年费时持有中银香港储蓄或往来账户可获豁免"
-      }
+      },
+      "searchTerms": [
+        "GO",
+        "白金",
+        "银联"
+      ]
     },
     {
       "id": "bochk.gba.youth",
       "bankID": "bochk",
-      "imageResource": "bochk-gba-youth.png",
+      "artwork": {
+        "path": "images/cards/bochk-gba-youth.png",
+        "sha256": "4fff3557a407410d38d716ae4753fc9f5af967b6ea6385e0e18e9acf98254002",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [
         {
@@ -824,12 +951,22 @@
           }
         ],
         "caveats": "5%为活动现金回赠，基础积分另计；仅限香港、澳门及内地实体零售，网上消费不适用。官方只列「即日起」，未明确公布起始日期；所示起始日期为2026-10-21资料核实日，并非银行公布的起日。迎新消费期及资格须按个人发卡资料核对。银联境外HKD交易不额外收取1%；CNY免手续费仅中国内地交易适用，非内地人民币消费请核对。"
-      }
+      },
+      "searchTerms": [
+        "GBA",
+        "大湾区",
+        "双币",
+        "青年"
+      ]
     },
     {
       "id": "bea.hku.student.visa",
       "bankID": "bea",
-      "imageResource": "bea-hku-student.png",
+      "artwork": {
+        "path": "images/cards/bea-hku-student-visa.png",
+        "sha256": "27e9a8d2fb185d9588a8de6e88d46b6ca6cd0b11ccd87cd663ef57232d63648f",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": false,
       "welcomePlans": [
         {
@@ -893,12 +1030,22 @@
           }
         ],
         "overseasHKDFeePercent": 1
-      }
+      },
+      "searchTerms": [
+        "HKU",
+        "港大",
+        "学生",
+        "Visa"
+      ]
     },
     {
       "id": "bea.udc.diamond",
       "bankID": "bea",
-      "imageResource": "bea-udc-diamond.png",
+      "artwork": {
+        "path": "images/cards/bea-udc-diamond.png",
+        "sha256": "e46c3fe518f942075f1807c3b5c5504579035f99bc42c9b7dd38292dca119408",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [
         {
@@ -1117,12 +1264,21 @@
         ],
         "caveats": "积分按官方现金等值估算，额外奖赏共用每月100,000积分上限（约HK$400）。新客户HK$400及CNY400迎新为两个独立消费及奖励分项，不可合并视为港币奖金；指定现有客户另有独立HK$300方案。超市、旅行社、政府、循环及自动转账等不享额外奖赏；保险、欧洲经济区或英国实体签账等不合资格消费按条款排除。",
         "annualFeeNote": "主卡首年免年费；标准主卡年费HK$1,800"
-      }
+      },
+      "searchTerms": [
+        "UDC",
+        "钻石",
+        "Visa"
+      ]
     },
     {
       "id": "bea.udc.diamond.student",
       "bankID": "bea",
-      "imageResource": "bea-udc-diamond.png",
+      "artwork": {
+        "path": "images/cards/bea-udc-diamond.png",
+        "sha256": "e46c3fe518f942075f1807c3b5c5504579035f99bc42c9b7dd38292dca119408",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [
         {
@@ -1297,12 +1453,22 @@
         ],
         "caveats": "日常签账规则与UDC钻石普通版相同。学生迎新为HK$100及CNY100两个独立分项，不能套用普通版HK$400及CNY400；两种货币须分别达标。按已更新官方迎新PDF采用发卡日起3个月，产品网页仍有旧2个月文字；申领前须向银行确认。积分按现金等值估算，超市、旅行社、政府、循环、自动转账等不享额外奖赏，保险等消费另有资格限制，须核对条款。",
         "annualFeeNote": "学生主卡永久免年费"
-      }
+      },
+      "searchTerms": [
+        "UDC",
+        "钻石",
+        "学生",
+        "Visa"
+      ]
     },
     {
       "id": "bochk.mastercard.debit",
       "bankID": "bochk",
-      "imageResource": "bochk-mastercard-debit.png",
+      "artwork": {
+        "path": "images/cards/bochk-mastercard-debit.png",
+        "sha256": "e90b1724c2a9d82b0d63f32a349b704efa744ba1192325d9e3787a34cae1516c",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [],
       "catalog": {
@@ -1319,12 +1485,22 @@
         "annualFeeNote": "免年费；扣账卡不设信用额度",
         "caveats": "基本现金回赠0.5%不设上限；中银私人财富客户可享额外0.5%，合共最高1%，须符合相关推广条款。12种主要货币的外币交易费用获豁免；其他货币、动态货币兑换（DCC）及商户结算安排以银行收费表为准。",
         "rules": []
-      }
+      },
+      "searchTerms": [
+        "Mastercard",
+        "万事达",
+        "扣账卡",
+        "借记卡"
+      ]
     },
     {
       "id": "cncbi.gba.dual",
       "bankID": "cncbi",
-      "imageResource": "cncbi-gba-dual.png",
+      "artwork": {
+        "path": "images/cards/cncbi-gba-dual.png",
+        "sha256": "84094ac1ba50863b143143ba54ed7d2c5c65fede429fec698606f97f631e6fd9",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [],
       "catalog": {
@@ -1405,12 +1581,24 @@
           }
         ],
         "caveats": "基础0.4%按共享信用额及账单周期设上限。人民币额外3.6%与大额额外6%各有适用条件；雲閃付商户扫付款码活动与其他迎新选项尚待单独核实。迎新方案须按银行条款选择，当前资料列示固定HK$600方案，个人消费期按实际申请及发卡资料核对。"
-      }
+      },
+      "searchTerms": [
+        "GBA",
+        "大湾区",
+        "双币",
+        "信银",
+        "中信",
+        "银联"
+      ]
     },
     {
       "id": "cncbi.multi-currency.debit",
       "bankID": "cncbi",
-      "imageResource": "cncbi-multi-currency-debit.png",
+      "artwork": {
+        "path": "images/cards/cncbi-multi-currency-debit.png",
+        "sha256": "c0b842a272687b36b2dea65d29a380cbc334e957ff44da27f5f99f8a030ec15f",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [],
       "catalog": {
@@ -1427,7 +1615,16 @@
         "annualFeeNote": "扣账卡不设信用额度；须持有有效的单名综合货币结算储蓄存款户口",
         "caveats": "支援港元、人民币、美元、澳元、加元、欧元、英镑、日圆、纽元和新加坡元共10种货币直接扣账。基本现金回赠0.2%不设上限；经Mastercard网络交易如涉及外币兑换，收取1.95%外币交易费。汇率、合资格交易及回赠安排以银行最新条款为准。",
         "rules": []
-      }
+      },
+      "searchTerms": [
+        "CITIC",
+        "中信",
+        "信银",
+        "多币",
+        "扣账卡",
+        "借记卡",
+        "Mastercard"
+      ]
     }
   ]
 }
