@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yangchen-cn.github.io/CardPilot-Catalog/schema.json",
+  "title": "CardPilot public catalog snapshot",
+  "description": "Official bank product and offer content. Never contains personal data. The app additionally validates every catalog with its native CatalogImporter.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "contentVersion", "publishedAt", "products"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "contentVersion": { "type": "integer", "minimum": 1 },
+    "publishedAt": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "products": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": { "$ref": "#/$defs/product" }
+    }
+  },
+  "$defs": {
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "bankID", "imageResource", "baseRewardVerified", "welcomePlans", "catalog"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "bankID": { "enum": ["hsbc", "bochk", "bea"] },
+        "imageResource": { "type": "string", "minLength": 1 },
+        "baseRewardVerified": { "type": "boolean" },
+        "welcomePlans": { "type": "array", "items": { "$ref": "#/$defs/welcomePlan" } },
+        "catalog": { "$ref": "#/$defs/catalog" }
+      }
+    },
+    "catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "bank", "name", "network", "sourceURL", "verifiedOn", "rules"],
+      "properties": {
+        "id": { "type": "string" },
+        "bank": { "type": "string" },
+        "name": { "type": "string" },
+        "network": { "type": "string" },
+        "sourceURL": { "type": "string", "pattern": "^https://" },
+        "verifiedOn": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "kind": { "type": "string" },
+        "baseRatePercent": { "type": "number" },
+        "foreignFeePercent": { "type": "number" },
+        "overseasHKDFeePercent": { "type": "number" },
+        "excludesWallets": { "type": "boolean" },
+        "annualFeeNote": { "type": "string" },
+        "caveats": { "type": "string" },
+        "rules": { "type": "array", "items": { "$ref": "#/$defs/rule" } },
+        "calculation": { "type": "object" }
+      }
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "kind", "startsOn", "endsOn", "sourceURL"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "kind": { "enum": ["cashback", "welcome"] },
+        "startsOn": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "endsOn": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "sourceURL": { "type": "string", "pattern": "^https://" },
+        "ratePercent": { "type": "number" },
+        "capHKD": { "type": "number" },
+        "capPeriod": { "type": "string" },
+        "sharedCapGroup": { "type": "string" },
+        "thresholdHKD": { "type": "number" },
+        "bonusHKD": { "type": "number" },
+        "minimumHKD": { "type": "number" },
+        "monthlyPhysicalThresholdHKD": { "type": "number" },
+        "channelCondition": { "type": "string" },
+        "category": { "type": "string" },
+        "currency": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "merchantKeywords": { "type": "array", "items": { "type": "string" } },
+        "requiresPersonalDates": { "type": "boolean" },
+        "enabled": { "type": "boolean" },
+        "notes": { "type": "string" },
+        "calculation": { "type": "object" }
+      }
+    },
+    "welcomePlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "details", "sourceURL", "ruleIDs", "kind"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "details": { "type": "string" },
+        "sourceURL": { "type": "string", "pattern": "^https://" },
+        "ruleIDs": { "type": "array", "items": { "type": "string" } },
+        "applicationChannels": { "type": "array", "items": { "type": "string" } },
+        "verified": { "type": "boolean" },
+        "calculable": { "type": "boolean" },
+        "periodType": { "type": "string" },
+        "periodCount": { "type": "integer" },
+        "applicationStartsOn": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "applicationEndsOn": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "kind": { "enum": ["main", "addon"] },
+        "exclusionGroup": { "type": "string" }
+      }
+    }
+  }
+}
