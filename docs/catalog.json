@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "contentVersion": 2026102303,
+  "contentVersion": 2026102304,
   "publishedAt": "2026-10-23",
   "banks": [
     {
@@ -67,6 +67,26 @@
         "sha256": "7b81e29fa401105b18616987c3cbb544b0c3fc86dcea379a68b813370c8d7549",
         "contentType": "image/png"
       }
+    },
+    {
+      "id": "bocom",
+      "name": "BOCOM 交通银行（香港）",
+      "shortName": "交通银行",
+      "logo": {
+        "path": "images/banks/bocom-hk.png",
+        "sha256": "e8040d6c544175882d5f741e00d129ed2d4fefeecb827a5f5ff6d377dbb3390a",
+        "contentType": "image/png"
+      },
+      "searchTerms": [
+        "交通银行",
+        "交通銀行",
+        "交通银行香港",
+        "交银",
+        "交銀",
+        "交行",
+        "BOCOM",
+        "Bank of Communications"
+      ]
     }
   ],
   "products": [
@@ -1697,6 +1717,248 @@
         "借记卡",
         "Mastercard"
       ]
+    },
+    {
+      "id": "bocom.go-goal.visa.platinum",
+      "bankID": "bocom",
+      "baseRewardVerified": true,
+      "welcomePlans": [
+        {
+          "id": "bocom.go-goal.plan.welcome.2026",
+          "title": "迎新三选一｜HK$500签账回赠或指定礼品",
+          "details": "2026年1月1日至12月31日申请；申请时及过去12个月未持有任何交银主卡。发卡首3个月内累计并入账满HK$3,000合资格签账，可从HK$500签账回赠、20吋折叠行李箱、Hedgren背囊连随身包中选一项。主附卡合并；同时申请大湾区卡不另送一份迎新。现金回赠达标后2个月内入账，13个月内取消卡或不合资格取奖可收HK$600行政费。",
+          "sourceURL": "https://www.hk.bankcomm.com/hk/uploadhk/infos/202205/30/2503990/20260113105426_GoGoal_Card_2026_WelcomeOffer_TnC_TC.pdf",
+          "ruleIDs": [
+            "bocom.go-goal.welcome.2026"
+          ],
+          "applicationChannels": [],
+          "verified": true,
+          "calculable": false,
+          "kind": "main",
+          "applicationStartsOn": "2026-01-01",
+          "applicationEndsOn": "2026-12-31"
+        }
+      ],
+      "searchTerms": [
+        "Go Goal",
+        "Go-Goal",
+        "GoGoal",
+        "学生",
+        "白金",
+        "Visa",
+        "交行",
+        "交通银行",
+        "交銀"
+      ],
+      "catalog": {
+        "id": "bocom.go-goal.visa.platinum",
+        "bank": "BOCOM 交通银行（香港）",
+        "name": "Go-Goal Visa 白金信用卡",
+        "network": "Visa",
+        "kind": "信用卡",
+        "sourceURL": "https://www.hk.bankcomm.com/hk/shtml/hk/tw/2004980/2005005/2005035/2500459/2500839/list.shtml?channelId=2004980",
+        "verifiedOn": "2026-10-23",
+        "baseRatePercent": 0.4,
+        "annualFeeNote": "大学生及大专生专用；永久免年费",
+        "caveats": "全日制大学及大专学生专用；基础0.4%按250分抵HK$1的积分等值列示。首年额外回赠按个人发卡月份计算，所示2026年为申请推广期。学费积分及迎新独立设条件；外币手续费未核实，不代表免费。",
+        "rules": [
+          {
+            "id": "bocom.go-goal.points",
+            "name": "日常积分｜HK$1赚1分",
+            "kind": "cashback",
+            "group": "daily",
+            "startsOn": null,
+            "endsOn": null,
+            "sourceURL": "https://www.hk.bankcomm.com/hk/shtml/hk/tw/2004980/2005005/2005035/2500459/2500839/list.shtml?channelId=2004980",
+            "notes": "合资格签账每HK$1累积1分；250分可抵HK$1，等值0.4%。积分兑换及排除交易按银行条款，不等于每笔即时现金回赠。"
+          },
+          {
+            "id": "bocom.go-goal.first-year.rebate.2026",
+            "name": "2026申请｜首12历月额外5.6%签账回赠",
+            "kind": "cashback",
+            "group": "daily",
+            "startsOn": "2026-01-01",
+            "endsOn": null,
+            "sourceURL": "https://www.hk.bankcomm.com/hk/uploadhk/infos/202205/30/2503990/20260113110202_Go-Goal_Card_Spending%20Rebate_TnC_TC.pdf",
+            "notes": "限2026年1月1日至12月31日成功申请主卡的全日制大学／大专学生。发卡当月起首12个历月，每月首HK$2,000合资格签账获额外5.6%，与基础积分等值合共最高6%；额外部分每月最高HK$112，交易历月后第3个月入账。个人12个月可能跨至2027年，不能以申请期结束日代替个人截止日。分期供款、网上缴费、收费等排除，具体入账及资格以银行记录为准。",
+            "ratePercent": 5.6,
+            "capHKD": 112,
+            "capPeriod": "monthly",
+            "calculation": {
+              "rateMode": "extra"
+            }
+          },
+          {
+            "id": "bocom.go-goal.tuition.points.2026",
+            "name": "指定大学学费｜最高50,000积分",
+            "kind": "cashback",
+            "group": "merchant",
+            "startsOn": "2026-01-01",
+            "endsOn": "2026-12-31",
+            "sourceURL": "https://www.hk.bankcomm.com/hk/uploadhk/infos/202205/30/2503990/20260113105426_Go-Goal_Card_Tuitionfee_TnC_TC.pdf",
+            "notes": "限2026年内申请的新卡，申请时及过去12个月无交银主卡。推广期内缴付城大、浸大、岭大、中大、教大、理大、科大或港大学费，每HK$1获1分，整期最多50,000分，主附卡合并。交易须在发卡首3个月内入账，积分于2027年6月或之前发放；本项不能直接等同享有6%签账回赠。",
+            "category": "缴费"
+          },
+          {
+            "id": "bocom.go-goal.welcome.2026",
+            "name": "迎新三选一｜HK$500签账回赠或指定礼品",
+            "kind": "welcome",
+            "group": "welcome",
+            "startsOn": "2026-01-01",
+            "endsOn": "2026-12-31",
+            "sourceURL": "https://www.hk.bankcomm.com/hk/uploadhk/infos/202205/30/2503990/20260113105426_GoGoal_Card_2026_WelcomeOffer_TnC_TC.pdf",
+            "notes": "2026年1月1日至12月31日申请；申请时及过去12个月未持有任何交银主卡。发卡首3个月内累计并入账满HK$3,000合资格签账，可从HK$500签账回赠、20吋折叠行李箱、Hedgren背囊连随身包中选一项。主附卡合并；同时申请大湾区卡不另送一份迎新。现金回赠达标后2个月内入账，13个月内取消卡或不合资格取奖可收HK$600行政费。",
+            "thresholdHKD": 3000,
+            "requiresPersonalDates": true
+          },
+          {
+            "id": "bocom.spending-rewards.2026q4",
+            "name": "签账礼遇叠叠赏｜月度HK$50／180或终极HK$1,500",
+            "kind": "cashback",
+            "group": "limited",
+            "startsOn": "2026-10-01",
+            "endsOn": "2026-12-31",
+            "sourceURL": "https://www.hk.bankcomm.com/hk/uploadhk/infos/202609/30/9039785/20260930112643_2026_Q4_Mass%20Spending%20Programme_TnC_TC_final.pdf",
+            "notes": "须登记推广202609CCD0000111，每月阶段5,000个名额。登记阶段起每月合资格签账满HK$3,000获HK$50，满HK$10,000获HK$180；累计达HK$100,000改获整期HK$1,500，不能再叠加阶段奖励。登记此推广另获2,000积分（每人整期一次），各主卡独立累计、附卡并入；内地银联人民币按1:1计门槛，钱包、八达通、缴费及指定交易排除。预计2027年3月入账。"
+          }
+        ]
+      },
+      "artwork": {
+        "path": "images/cards/bocom-hk-go-goal-visa-platinum.png",
+        "sha256": "be575bf80a4001f45cbf20c843ac0cb3e12126a2ff9828adcb92378089d592ed",
+        "contentType": "image/png"
+      }
+    },
+    {
+      "id": "bocom.gba.unionpay.diamond",
+      "bankID": "bocom",
+      "baseRewardVerified": false,
+      "welcomePlans": [
+        {
+          "id": "bocom.gba.plan.welcome.2026h2",
+          "title": "新客迎新｜HK$500签账回赠",
+          "details": "2026年7月1日至12月31日申请，申请时及过去12个月未持有任何交银主卡；发卡日起首3个月内累计并入账满HKD／RMB5,000合资格签账，可获HK$500签账回赠。人民币按1:1计算活动门槛，附属卡并入主卡，达标后2个月内存入主卡港币账户；退款、取消、未入账等交易不计。个人消费期不同于申请推广期。",
+          "sourceURL": "https://www.hk.bankcomm.com/hk/uploadhk/infos/202301/31/2622792/20260629174948_%E5%A4%A7%E7%81%A3%E5%8D%80%E5%8D%A12026%E8%BF%8E%E6%96%B0%E7%A6%AE%E5%93%81%E6%8F%9B%E9%A0%98%E6%A2%9D%E6%AC%BE%E5%8F%8A%E7%B4%B0%E5%89%87H2_TC.pdf",
+          "ruleIDs": [
+            "bocom.gba.welcome.2026h2"
+          ],
+          "applicationChannels": [],
+          "verified": true,
+          "calculable": false,
+          "kind": "main",
+          "applicationStartsOn": "2026-07-01",
+          "applicationEndsOn": "2026-12-31"
+        }
+      ],
+      "searchTerms": [
+        "大湾区",
+        "大灣區",
+        "GBA",
+        "双币",
+        "雙幣",
+        "银联",
+        "銀聯",
+        "钻石",
+        "鑽石",
+        "交行",
+        "交通银行",
+        "交銀"
+      ],
+      "catalog": {
+        "id": "bocom.gba.unionpay.diamond",
+        "bank": "BOCOM 交通银行（香港）",
+        "name": "大湾区银联双币钻石信用卡",
+        "network": "UnionPay",
+        "kind": "信用卡",
+        "sourceURL": "https://www.hk.bankcomm.com/hk/shtml/hk/tw/2004980/2005005/2005035/2500459/2601230/list.shtml?channelId=2004980",
+        "verifiedOn": "2026-10-23",
+        "annualFeeNote": "年费及豁免条件尚待核实，请以银行最新申请文件为准",
+        "caveats": "港币与人民币分账，实际兑换及收费按银行记录。日常奖励以积分展示，不预设固定现金回赠比例；锦绣中华Diamond Prestige邀请卡的专属权益不适用于本产品。推广需登记及合资格签账，不能从币种推断交易地区或个人资格。",
+        "rules": [
+          {
+            "id": "bocom.gba.dual-account",
+            "name": "港币及人民币双币账户",
+            "kind": "cashback",
+            "group": "daily",
+            "startsOn": null,
+            "endsOn": null,
+            "sourceURL": "https://www.hk.bankcomm.com/hk/shtml/hk/tw/2004980/2005005/2005035/2500459/2601230/list.shtml?channelId=2004980",
+            "notes": "香港及海外签账以港币结算，内地签账以人民币结算；分别按对应账户还款，实际入账及转换按银行处理。"
+          },
+          {
+            "id": "bocom.gba.points",
+            "name": "合资格签账累积奖赏积分",
+            "kind": "cashback",
+            "group": "daily",
+            "startsOn": null,
+            "endsOn": null,
+            "sourceURL": "https://www.hk.bankcomm.com/hk/shtml/hk/tw/2004980/2005005/5005174/5005181/5005188/list.shtml?channelId=2004980",
+            "notes": "合资格签账每HK$1或人民币1元可获1分，附属卡积分并入主卡。人民币积分仅适用于银联双币卡，部分内地交易类别及缴费、收费等不获积分；现金等值与具体兑换方案未在此预设。"
+          },
+          {
+            "id": "bocom.unionpay.cny-mop.rebate.2026",
+            "name": "人民币／澳门币零售签账5%回赠",
+            "kind": "cashback",
+            "group": "limited",
+            "startsOn": "2026-01-01",
+            "endsOn": "2026-12-31",
+            "sourceURL": "https://www.hk.bankcomm.com/hk/uploadhk/infos/202606/29/7051588/20260714173726_2026_%E3%80%8C%E4%BA%BA%E6%B0%91%E5%B9%A3%E5%8F%8A%E6%BE%B3%E9%96%80%E5%B9%A3%E9%9B%B6%E5%94%AE%E7%B0%BD%E8%B3%AC%E4%BA%A4%E6%98%93%E7%B0%BD%E8%B3%AC%E6%8E%A8%E5%BB%A3%E8%A8%88%E5%8A%83%E3%80%8DTnC_TC_202607.pdf",
+            "ratePercent": 5,
+            "capHKD": 300,
+            "capPeriod": "monthly",
+            "notes": "须登记202601CCD0000098，全年5,000个名额。每月合资格人民币及／或澳门币零售签账须满HK$2,000，每月最高HK$300、全年HK$3,600；内地人民币按1:1计算推广金额。支持实体卡及指定Apple Pay／云闪付／银联二维码；本行App银联二维码包括在内。指定交通交易另按交通5%活动处理，不能并入本项；钱包、八达通、缴费、保险及指定交易排除。主附卡合并，各主卡分开，须当月入账，回赠翌月发放。"
+          },
+          {
+            "id": "bocom.unionpay.gba-transport.rebate.2026",
+            "name": "交游湾区｜指定交通签账5%回赠",
+            "kind": "cashback",
+            "group": "limited",
+            "startsOn": "2026-01-01",
+            "endsOn": "2026-12-31",
+            "sourceURL": "https://www.hk.bankcomm.com/hk/uploadhk/infos/202609/30/7051612/20260930144441_2026_TravelnEarn%20in%20GBA_TC_TC.pdf",
+            "ratePercent": 5,
+            "capHKD": 100,
+            "capPeriod": "monthly",
+            "category": "交通",
+            "calculation": {
+              "regions": [
+                "HK",
+                "CN",
+                "MO"
+              ]
+            },
+            "notes": "须登记202601CCD0000097，从登记当月起计算。适用香港、澳门、内地及跨境的指定公共交通，以及隧道／路桥、油站、停车、充电、汽车维修及美容等合资格费用；每月最多HK$100，主附卡合并，各主卡独立。接受实体卡及指定Apple Pay／云闪付／银联二维码；八达通增值、支付宝／微信／PayMe钱包、分拆及退款等排除。内地人民币按1:1计算推广金额，回赠翌月底前发放。"
+          },
+          {
+            "id": "bocom.gba.welcome.2026h2",
+            "name": "新客迎新｜消费满HKD／RMB5,000获HK$500",
+            "kind": "welcome",
+            "group": "welcome",
+            "startsOn": "2026-07-01",
+            "endsOn": "2026-12-31",
+            "sourceURL": "https://www.hk.bankcomm.com/hk/uploadhk/infos/202301/31/2622792/20260629174948_%E5%A4%A7%E7%81%A3%E5%8D%80%E5%8D%A12026%E8%BF%8E%E6%96%B0%E7%A6%AE%E5%93%81%E6%8F%9B%E9%A0%98%E6%A2%9D%E6%AC%BE%E5%8F%8A%E7%B4%B0%E5%89%87H2_TC.pdf",
+            "notes": "2026年7月1日至12月31日申请，申请时及过去12个月未持有任何交银主卡；发卡日起首3个月内累计并入账满HKD／RMB5,000合资格签账，可获HK$500签账回赠。人民币按1:1计算活动门槛，附属卡并入主卡，达标后2个月内存入主卡港币账户；退款、取消、未入账等交易不计。个人消费期不同于申请推广期。",
+            "thresholdHKD": 5000,
+            "bonusHKD": 500,
+            "requiresPersonalDates": true
+          },
+          {
+            "id": "bocom.spending-rewards.2026q4",
+            "name": "签账礼遇叠叠赏｜月度HK$50／180或终极HK$1,500",
+            "kind": "cashback",
+            "group": "limited",
+            "startsOn": "2026-10-01",
+            "endsOn": "2026-12-31",
+            "sourceURL": "https://www.hk.bankcomm.com/hk/uploadhk/infos/202609/30/9039785/20260930112643_2026_Q4_Mass%20Spending%20Programme_TnC_TC_final.pdf",
+            "notes": "须登记推广202609CCD0000111，每月阶段5,000个名额。登记阶段起每月合资格签账满HK$3,000获HK$50，满HK$10,000获HK$180；累计达HK$100,000改获整期HK$1,500，不能再叠加阶段奖励。登记此推广另获2,000积分（每人整期一次），各主卡独立累计、附卡并入；内地银联人民币按1:1计门槛，钱包、八达通、缴费及指定交易排除。预计2027年3月入账。"
+          }
+        ]
+      },
+      "artwork": {
+        "path": "images/cards/bocom-hk-gba-unionpay-diamond.png",
+        "sha256": "5aac8a28ecb657bfbcf38b59206cfed3a992e343255b60937f87c6f3a6e43c0e",
+        "contentType": "image/png"
+      }
     }
   ]
 }
