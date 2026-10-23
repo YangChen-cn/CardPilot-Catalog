@@ -746,13 +746,13 @@
             "group": "limited",
             "startsOn": "2026-10-01",
             "endsOn": "2026-12-31",
-            "sourceURL": "https://iservice.boccc.com.hk/LDPRegistrationWEB/w-verify.jsp?action=register&campaignid=goreward2610&lang=zh_CN&sign=1006a3002a3e7189097e5b5ca5028a1f1e6e5b1b34f71fdb0d73c1",
+            "sourceURL": "https://www.bochk.com/tc/creditcard/promotions/offers/northboundgo.html",
             "ratePercent": 8,
             "capHKD": 300,
             "capPeriod": "campaign",
             "sharedCapGroup": "bochk.go.mobile.2026q4.75000",
             "requiresPersonalDates": true,
-            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记（首35,000名），以登记成功当月及其后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
+            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记，以登记成功后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
             "calculation": {
               "regions": [
                 "CN"
@@ -781,13 +781,13 @@
             "group": "limited",
             "startsOn": "2026-10-01",
             "endsOn": "2026-12-31",
-            "sourceURL": "https://iservice.boccc.com.hk/LDPRegistrationWEB/w-verify.jsp?action=register&campaignid=goreward2610&lang=zh_CN&sign=1006a3002a3e7189097e5b5ca5028a1f1e6e5b1b34f71fdb0d73c1",
+            "sourceURL": "https://www.bochk.com/tc/creditcard/promotions/offers/northboundgo.html",
             "ratePercent": 4,
             "capHKD": 300,
             "capPeriod": "campaign",
             "sharedCapGroup": "bochk.go.mobile.2026q4.75000",
             "requiresPersonalDates": true,
-            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记（首35,000名），以登记成功当月及其后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
+            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记，以登记成功后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
             "calculation": {
               "regions": [
                 "HK"
@@ -815,13 +815,13 @@
             "group": "limited",
             "startsOn": "2026-10-01",
             "endsOn": "2026-12-31",
-            "sourceURL": "https://iservice.boccc.com.hk/LDPRegistrationWEB/w-verify.jsp?action=register&campaignid=goreward2610&lang=zh_CN&sign=1006a3002a3e7189097e5b5ca5028a1f1e6e5b1b34f71fdb0d73c1",
+            "sourceURL": "https://www.bochk.com/dam/creditcard/promotions/offers/taipei-go/tc.html",
             "ratePercent": 4,
             "capHKD": 300,
             "capPeriod": "campaign",
             "sharedCapGroup": "bochk.go.mobile.2026q4.75000",
             "requiresPersonalDates": true,
-            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记（首35,000名），以登记成功当月及其后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
+            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记，以登记成功后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
             "calculation": {
               "regions": [
                 "MO",
@@ -869,12 +869,13 @@
             "kind": "cashback",
             "group": "merchant",
             "startsOn": null,
-            "endsOn": null,
+            "endsOn": "2026-12-31",
             "sourceURL": "https://www.bochk.com/tc/creditcard/promotions/offers/gomerchants.html",
             "ratePercent": 5,
             "capPeriod": "monthly",
             "merchantKeywords": "Keeta,美团,Meituan,大众点评,Dianping,高速铁路,High Speed Rail,滴滴,DiDi,京东,JD,惠康,Wellcome,Market Place,Oliver's,3hreesixty",
-            "notes": "指定Go商户合资格零售签账最高5%现金回赠；须以银行认定商户及交易渠道为准。商户包括Keeta、美团、大众点评、香港西九龙站指定柜台／售票机的高铁票、内地合资格滴滴网约车、京东港澳自营且Go卡直接绑定支付、惠康／Market Place／Oliver's／3hreesixty指定渠道等。部分自助收银机及网上交易不适用，指定Go商户优惠不能与GO手机20X／10X／5X推广积分叠加；回赠上限及其他限制按官方条款。"
+            "notes": "指定Go商户合资格零售签账最高5%现金回赠（已含基础0.4%，额外4.6%），每张Go卡主附卡合并计算，月回赠总上限HK$100。日常须每月累计本地合资格交易满HK$1,500，2026年底前获豁免该门槛；按银行实际商户识别及MCC确认资格。适用指定商户包括Keeta、美团、大众点评、香港西九龙站指定柜台／售票机的高铁票、内地指定滴滴网约车、京东港澳自营且Go卡直接绑定支付、惠康／Market Place／Oliver's／3hreesixty合资格渠道；惠康等自助收银及网上渠道不适用。支付方式：实体卡、指定商户App直接绑定Go卡、Apple Pay、Huawei Pay、Samsung Pay、云闪付App银联二维码；BoC Pay/BoC Pay+不适用；与GO手机积分推广不可叠加。名单及细则以官方商户清单为准。",
+            "capHKD": 100
           }
         ],
         "caveats": "钻石版手机签账3倍积分等值1.2%，与白金版2倍积分等值0.8%不同；每月HK$100等值上限包括基础积分，2026年底前豁免本地消费门槛。须登记的额外积分活动、指定Go商户5%、非人民币外币2倍积分及海外外币费回赠，须分别核对登记要求和适用范围；指定Go商户不可与手机/海外积分优惠叠加。境外HKD交易不额外收取1%；CNY免手续费仅内地交易适用。主附卡共用上限，请核对银行累计记录。；2026年第4季内地／本地／海外手机积分推广需单独登记，最高倍率包含基础及原有手机积分，整期合资格额外积分上限75,000分（等值HK$300）；指定Go商户5%不与该推广叠加。另有需独立登记的海外实体外币交易费回赠。",
@@ -996,13 +997,13 @@
             "group": "limited",
             "startsOn": "2026-10-01",
             "endsOn": "2026-12-31",
-            "sourceURL": "https://iservice.boccc.com.hk/LDPRegistrationWEB/w-verify.jsp?action=register&campaignid=goreward2610&lang=zh_CN&sign=1006a3002a3e7189097e5b5ca5028a1f1e6e5b1b34f71fdb0d73c1",
+            "sourceURL": "https://www.bochk.com/tc/creditcard/promotions/offers/northboundgo.html",
             "ratePercent": 4,
             "capHKD": 300,
             "capPeriod": "campaign",
             "sharedCapGroup": "bochk.go.mobile.2026q4.75000",
             "requiresPersonalDates": true,
-            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记（首35,000名），以登记成功当月及其后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
+            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记，以登记成功后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
             "calculation": {
               "regions": [
                 "CN"
@@ -1031,13 +1032,13 @@
             "group": "limited",
             "startsOn": "2026-10-01",
             "endsOn": "2026-12-31",
-            "sourceURL": "https://iservice.boccc.com.hk/LDPRegistrationWEB/w-verify.jsp?action=register&campaignid=goreward2610&lang=zh_CN&sign=1006a3002a3e7189097e5b5ca5028a1f1e6e5b1b34f71fdb0d73c1",
+            "sourceURL": "https://www.bochk.com/tc/creditcard/promotions/offers/northboundgo.html",
             "ratePercent": 2,
             "capHKD": 300,
             "capPeriod": "campaign",
             "sharedCapGroup": "bochk.go.mobile.2026q4.75000",
             "requiresPersonalDates": true,
-            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记（首35,000名），以登记成功当月及其后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
+            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记，以登记成功后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
             "calculation": {
               "regions": [
                 "HK"
@@ -1065,13 +1066,13 @@
             "group": "limited",
             "startsOn": "2026-10-01",
             "endsOn": "2026-12-31",
-            "sourceURL": "https://iservice.boccc.com.hk/LDPRegistrationWEB/w-verify.jsp?action=register&campaignid=goreward2610&lang=zh_CN&sign=1006a3002a3e7189097e5b5ca5028a1f1e6e5b1b34f71fdb0d73c1",
+            "sourceURL": "https://www.bochk.com/dam/creditcard/promotions/offers/taipei-go/tc.html",
             "ratePercent": 2,
             "capHKD": 300,
             "capPeriod": "campaign",
             "sharedCapGroup": "bochk.go.mobile.2026q4.75000",
             "requiresPersonalDates": true,
-            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记（首35,000名），以登记成功当月及其后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
+            "notes": "推广期2026-10-01至12-31，须在本季度成功重新登记，以登记成功后推广期内合资格交易计。指定支付为Apple Pay、Huawei Pay、Samsung Pay、BoC Pay+、云闪付App银联二维码；普通实体卡、支付宝、微信支付不适用。活动倍率为合计倍率，已包含基础1X与既有手机积分，不可与3X/2X再累加。每卡主附卡合并，整期额外积分上限75,000分（等值HK$300），本地、内地、海外共享，且相关海外2X积分亦受同一上限约束；不是第三季度每月25,000分。内地须以人民币结算，按CNY1=HKD1计；海外须符合外币收单要求。指定Go商户5%与本活动不能叠加；交易须7日内入账，积分一般于交易月后2个月内发放。",
             "calculation": {
               "regions": [
                 "MO",
@@ -1119,12 +1120,13 @@
             "kind": "cashback",
             "group": "merchant",
             "startsOn": null,
-            "endsOn": null,
+            "endsOn": "2026-12-31",
             "sourceURL": "https://www.bochk.com/tc/creditcard/promotions/offers/gomerchants.html",
             "ratePercent": 5,
             "capPeriod": "monthly",
             "merchantKeywords": "Keeta,美团,Meituan,大众点评,Dianping,高速铁路,High Speed Rail,滴滴,DiDi,京东,JD,惠康,Wellcome,Market Place,Oliver's,3hreesixty",
-            "notes": "指定Go商户合资格零售签账最高5%现金回赠；须以银行认定商户及交易渠道为准。商户包括Keeta、美团、大众点评、香港西九龙站指定柜台／售票机的高铁票、内地合资格滴滴网约车、京东港澳自营且Go卡直接绑定支付、惠康／Market Place／Oliver's／3hreesixty指定渠道等。部分自助收银机及网上交易不适用，指定Go商户优惠不能与GO手机20X／10X／5X推广积分叠加；回赠上限及其他限制按官方条款。"
+            "notes": "指定Go商户合资格零售签账最高5%现金回赠（已含基础0.4%，额外4.6%），每张Go卡主附卡合并计算，月回赠总上限HK$100。日常须每月累计本地合资格交易满HK$1,500，2026年底前获豁免该门槛；按银行实际商户识别及MCC确认资格。适用指定商户包括Keeta、美团、大众点评、香港西九龙站指定柜台／售票机的高铁票、内地指定滴滴网约车、京东港澳自营且Go卡直接绑定支付、惠康／Market Place／Oliver's／3hreesixty合资格渠道；惠康等自助收银及网上渠道不适用。支付方式：实体卡、指定商户App直接绑定Go卡、Apple Pay、Huawei Pay、Samsung Pay、云闪付App银联二维码；BoC Pay/BoC Pay+不适用；与GO手机积分推广不可叠加。名单及细则以官方商户清单为准。",
+            "capHKD": 100
           }
         ],
         "caveats": "白金版手机签账2倍积分等值0.8%，不可套用钻石版1.2%；每月HK$100等值上限包括基础积分，2026年底前豁免本地消费门槛。须登记的额外积分活动、指定Go商户5%、非人民币外币2倍积分及海外外币费回赠，须分别核对登记要求和适用范围；指定Go商户不可与手机/海外积分优惠叠加。境外HKD交易不额外收取1%；CNY免手续费仅内地交易适用。银联白金级别礼遇须按白金条款核对，不套用钻石卡权益。主附卡共用上限，请核对银行累计记录。；2026年第4季内地／本地／海外手机积分推广需单独登记，最高倍率包含基础及原有手机积分，整期合资格额外积分上限75,000分（等值HK$300）；指定Go商户5%不与该推广叠加。另有需独立登记的海外实体外币交易费回赠。",
