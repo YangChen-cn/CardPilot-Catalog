@@ -23,6 +23,8 @@ PRIVATE_KEYS = {
     "cardOverride", "welcomeTracking",
 }
 MAX_IMAGE_BYTES = 4_000_000
+CARD_IMAGE_WIDTH = 1200
+CARD_IMAGE_HEIGHT = 756
 PAYMENT_METHODS = {
     "待确认", "Apple Pay", "实体卡", "网上支付", "支付宝", "微信支付",
     "UnionPay", "BoC Pay", "Huawei Pay", "PayMe",
@@ -135,6 +137,9 @@ def validate_asset(value: object, label: str, root: Path, folder: str) -> None:
     require(actual_type == content_type, f"{label}: file is {actual_type or 'unknown'}, expected {content_type}")
     require(0 < width <= MAX_IMAGE_DIMENSION and 0 < height <= MAX_IMAGE_DIMENSION,
             f"{label}: image dimensions must be 1...{MAX_IMAGE_DIMENSION}px")
+    if folder == "cards":
+        require(width == CARD_IMAGE_WIDTH and height == CARD_IMAGE_HEIGHT,
+                f"{label}: card artwork must be {CARD_IMAGE_WIDTH}x{CARD_IMAGE_HEIGHT}px, got {width}x{height}px")
 
 
 def validate_plan(plan: object, label: str, rule_ids: set[str]) -> str:
