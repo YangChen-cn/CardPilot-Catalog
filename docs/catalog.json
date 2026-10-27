@@ -2372,12 +2372,7 @@
             "capHKD": 600,
             "capPeriod": "campaign",
             "enabled": false,
-            "merchantKeywords": [
-              "HKT",
-              "The Club",
-              "csl",
-              "1O1O"
-            ]
+            "merchantKeywords": "HKT,The Club,csl,1O1O"
           },
           {
             "id": "mox.credit.mastercard.moxcash.welcome.2026",

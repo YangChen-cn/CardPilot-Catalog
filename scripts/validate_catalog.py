@@ -176,6 +176,9 @@ def validate_rule(rule: object, label: str, seen: set[str]) -> None:
     for field in ("startsOn", "endsOn"):
         if rule.get(field) is not None:
             parse_date(rule[field], f"{label}/{rule_id}.{field}")
+    if "merchantKeywords" in rule:
+        require(isinstance(rule["merchantKeywords"], str),
+                f"{label}/{rule_id}.merchantKeywords must be a comma-separated string, not an array")
     if rule.get("paymentMethod") not in (None, ""):
         validate_payment_method(rule["paymentMethod"], f"{label}/{rule_id}.paymentMethod")
     calculation = rule.get("calculation")
