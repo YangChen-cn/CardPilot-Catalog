@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "contentVersion": 2026102701,
+  "contentVersion": 2026102702,
   "publishedAt": "2026-10-27",
   "banks": [
     {
@@ -92,7 +92,11 @@
       "id": "mox",
       "name": "Mox Bank",
       "shortName": "Mox",
-      "logo": null,
+      "logo": {
+        "path": "images/banks/mox.png",
+        "sha256": "34a27374dc43e420d84d0680b4a9096b03aa7a9f803fb4952a276e5b0cadd097",
+        "contentType": "image/png"
+      },
       "searchTerms": [
         "Mox Credit",
         "Mox Bank",
@@ -103,7 +107,11 @@
       "id": "icbcasia",
       "name": "ICBC (Asia) 中国工商银行（亚洲）",
       "shortName": "工银亚洲",
-      "logo": null,
+      "logo": {
+        "path": "images/banks/icbcasia.png",
+        "sha256": "48d1683ae16cf48c3e0d5a54181f9b98bf1cd22c11a24a0a26f06d369c910d76",
+        "contentType": "image/png"
+      },
       "searchTerms": [
         "工银亚洲",
         "工銀亞洲",
@@ -117,7 +125,11 @@
       "id": "ccbasia",
       "name": "CCB (Asia) 中国建设银行（亚洲）",
       "shortName": "建行亚洲",
-      "logo": null,
+      "logo": {
+        "path": "images/banks/ccbasia.png",
+        "sha256": "5e2c63035b7e26e429dbe1b0608cf4a94571de1e0746252d2ebf01b82b479eef",
+        "contentType": "image/png"
+      },
       "searchTerms": [
         "建行亚洲",
         "建行亞洲",
@@ -2278,7 +2290,11 @@
     {
       "id": "mox.credit.mastercard",
       "bankID": "mox",
-      "artwork": null,
+      "artwork": {
+        "path": "images/cards/mox-credit-mastercard.png",
+        "sha256": "dd145490bd7ff6a08b293148efe4d889b32e9520738cc68ed2d3a6a59d966e8a",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [
         {
@@ -2380,7 +2396,7 @@
         ],
         "baseRatePercent": 1,
         "annualFeeNote": "官网列明免年费。",
-        "caveats": "普通客户选择CashBack赚1%无上限，具Mox+资格则可获2%无上限；需要在App选择CashBack/里数，不能把两种同时累加。3%超市CashBack依Mastercard商户类别认定。官网0%外币及海外商户签账费用有选择亚洲万里通奖赏等条件，不能视为所有CashBack交易永久0%手续费。账户开立与信用卡审批分别处理。"
+        "caveats": "普通客户选择CashBack赚1%无上限，具Mox+资格则可获2%无上限；需要在App选择CashBack/里数，不能把两种同时累加。3%超市CashBack依Mastercard商户类别认定。官网0%外币及海外商户签账费用有选择亚洲万里通奖赏等条件，不能视为所有CashBack交易永久0%手续费。账户开立与信用卡审批分别处理。 卡面为参考官方素材经 AI 整理的横版示意，已去除示例个人资料；不代表银行实际发行的卡面版本。"
       },
       "searchTerms": [
         "Mox Credit",
@@ -2393,7 +2409,11 @@
     {
       "id": "icbcasia.horoscope.unionpay.diamond",
       "bankID": "icbcasia",
-      "artwork": null,
+      "artwork": {
+        "path": "images/cards/icbcasia-horoscope-unionpay-diamond.png",
+        "sha256": "1c79da1c416e8b72ae469364ef0ba9140e0f7297364e12253c57b6409c566e03",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [],
       "catalog": {
@@ -2463,7 +2483,11 @@
     {
       "id": "icbcasia.horoscope.visa.signature",
       "bankID": "icbcasia",
-      "artwork": null,
+      "artwork": {
+        "path": "images/cards/icbcasia-horoscope-visa-signature.png",
+        "sha256": "627efe5c45032efb3b8efd09931b424f6d3cf1ecb93462d75efcaeda6fec755c",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [],
       "catalog": {
@@ -2512,7 +2536,11 @@
     {
       "id": "icbcasia.gba.unionpay.diamond",
       "bankID": "icbcasia",
-      "artwork": null,
+      "artwork": {
+        "path": "images/cards/icbcasia-gba-unionpay-diamond.png",
+        "sha256": "4f8add9e886cc17958448c6e1bc236b36748f7e55505642bfea9ef69fa07b42c",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [],
       "catalog": {
@@ -2582,7 +2610,11 @@
     {
       "id": "ccbasia.eye.visa.signature",
       "bankID": "ccbasia",
-      "artwork": null,
+      "artwork": {
+        "path": "images/cards/ccbasia-eye-visa-signature.png",
+        "sha256": "4946c3ab2e6a673991a7d94026b185088d7ed87671b2ed517032a359c2f5b62e",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [
         {
@@ -2671,7 +2703,7 @@
           }
         ],
         "baseRatePercent": 0.4,
-        "caveats": "平常基本1X积分按25,000分折HKD100等值0.4%。网购/非接触式付款额外至5X积分相当最高2%回赠，含1X基础积分；额外积分存在计划期上限，回赠一般须以积分兑换。2026年7–9月本地餐饮最高11%的独立活动已结束，不能当当前全年回赠。海外手续费未核实。"
+        "caveats": "平常基本1X积分按25,000分折HKD100等值0.4%。网购/非接触式付款额外至5X积分相当最高2%回赠，含1X基础积分；额外积分存在计划期上限，回赠一般须以积分兑换。2026年7–9月本地餐饮最高11%的独立活动已结束，不能当当前全年回赠。海外手续费未核实。 卡面为参考官方素材经 AI 整理的横版示意，已去除示例个人资料；不代表银行实际发行的卡面版本。"
       },
       "searchTerms": [
         "eye+",
@@ -2685,7 +2717,11 @@
     {
       "id": "ccbasia.travo.world.mastercard",
       "bankID": "ccbasia",
-      "artwork": null,
+      "artwork": {
+        "path": "images/cards/ccbasia-travo-world-mastercard.png",
+        "sha256": "142ade81b90d00a8e42d7341a1da43f44faf4c548a6b7b4ed32d18a27bafec4a",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": false,
       "welcomePlans": [
         {
@@ -2770,7 +2806,7 @@
             "enabled": false
           }
         ],
-        "caveats": "官方推廣2026-07-01至12-31须先登记TRAVO Rewards；海外最高4%回赠或HKD1.5/里、本地餐饮最高2%回赠或HKD3/里为二择奖励和满足限制后的最高档，不是无条件基础回赠。官网最高10%包含独立海外叠加推广，不能作为卡基础回赠；一般积分基准/外币手续费未单独核实。"
+        "caveats": "官方推廣2026-07-01至12-31须先登记TRAVO Rewards；海外最高4%回赠或HKD1.5/里、本地餐饮最高2%回赠或HKD3/里为二择奖励和满足限制后的最高档，不是无条件基础回赠。官网最高10%包含独立海外叠加推广，不能作为卡基础回赠；一般积分基准/外币手续费未单独核实。 卡面为参考官方素材经 AI 整理的横版示意，已去除示例个人资料；不代表银行实际发行的卡面版本。"
       },
       "searchTerms": [
         "TRAVO",
@@ -2784,7 +2820,11 @@
     {
       "id": "ccbasia.unionpay.dual.currency",
       "bankID": "ccbasia",
-      "artwork": null,
+      "artwork": {
+        "path": "images/cards/ccbasia-unionpay-dual-currency.png",
+        "sha256": "ffc4199deb80c6aa74728acbb63634e399f143a8e4311983e482466621014745",
+        "contentType": "image/png"
+      },
       "baseRewardVerified": true,
       "welcomePlans": [
         {
@@ -2861,7 +2901,7 @@
         ],
         "baseRatePercent": 0.4,
         "foreignFeePercent": 0,
-        "caveats": "全年海外网购/外币签账主张HKD0手续费，是否涵盖特定渠道、兑换汇率差及人民币账单以银行细则为准。合资格签账每HKD/RMB1积1分，每250分可折HKD/RMB1，即0.4%等值；积分奖励需选择现金回赠或里数计划，不能把现金与里数同时累加。内地人民币账单与香港/海外港币账单分开；不能根据币种自动推断地区。"
+        "caveats": "全年海外网购/外币签账主张HKD0手续费，是否涵盖特定渠道、兑换汇率差及人民币账单以银行细则为准。合资格签账每HKD/RMB1积1分，每250分可折HKD/RMB1，即0.4%等值；积分奖励需选择现金回赠或里数计划，不能把现金与里数同时累加。内地人民币账单与香港/海外港币账单分开；不能根据币种自动推断地区。 卡面为参考官方素材经 AI 整理的横版示意，已去除示例个人资料；不代表银行实际发行的卡面版本。"
       },
       "searchTerms": [
         "CCB UnionPay",
