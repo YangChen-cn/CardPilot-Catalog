@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "contentVersion": 2026102702,
+  "contentVersion": 2026102703,
   "publishedAt": "2026-10-27",
   "banks": [
     {
@@ -2465,7 +2465,7 @@
           }
         ],
         "baseRatePercent": 1.5,
-        "caveats": "官方列示本地及海外合资格签账1.5%无上限现金回赠，每月计入港币账户；港币与人民币签账合并计算，人民币按1:1计回赠基础。需排除现金、缴费、分期等非合资格项目，以正式签账奖励条款为准。年费与跨境手续费未完整核实，不视为永久豁免。 星座卡面有十二款设计；官方卡面图片待补。"
+        "caveats": "官方列示本地及海外合资格签账1.5%无上限现金回赠，每月计入港币账户；港币与人民币签账合并计算，人民币按1:1计回赠基础。需排除现金、缴费、分期等非合资格项目，以正式签账奖励条款为准。年费与跨境手续费未完整核实，不视为永久豁免。 星座卡面有十二款设计；当前采用官方人马座示例卡面，申请时可按银行规定选择个人星座。"
       },
       "searchTerms": [
         "ICBC Horoscope",
@@ -2645,7 +2645,7 @@
         "name": "eye Visa Signature 信用卡（eye+）",
         "network": "Visa",
         "kind": "信用卡",
-        "sourceURL": "https://www.asia.ccb.com/hongkong_tc/personal/credit_cards/eye_visa_signature_credit_card.html",
+        "sourceURL": "https://www.asia.ccb.com/hongkong_sc/personal/credit_cards/eye_credit_card.html",
         "verifiedOn": "2026-10-27",
         "rules": [
           {
@@ -2662,16 +2662,17 @@
           },
           {
             "id": "ccbasia.eye.visa.signature.online.contactless",
-            "name": "网购／拍卡支付｜最高5X积分（约2%）",
+            "name": "升级版｜网购最高5%／拍卡最高3%",
             "kind": "cashback",
-            "group": "daily",
-            "sourceURL": "https://www.asia.ccb.com/hongkong_tc/personal/credit_cards/eye_visa_signature_credit_card.html",
-            "notes": "网购或Visa payWave、Apple Pay、Google Pay等非接触式付款合资格交易可享共5X积分（已含基本1X），约等值最高2%，免登记。可能设额外积分上限及交易排除，需依银行积分奖励计划核算。",
-            "ratePercent": 2,
+            "group": "limited",
+            "sourceURL": "https://www.asia.ccb.com/hongkong_sc/personal/credit_cards/eye_credit_card.html",
+            "notes": "每月合资格零售总签账满HKD3,000后，网购享7.5X积分（按25,000分抵HKD100约为3%）及2%现金；Visa payWave、Apple Pay、Google Pay合资格拍卡享7.5X积分，约3%。免登记，但不同交易类别及积分兑换仍受条款限制。Signature每月共享额外52,000积分及HKD160现金额度，不是网购和拍卡各有一份上限；不叠加旧5X/2%说明。此处为公布权益摘要，不自动判定合资格或保证到账。",
             "enabled": false,
             "calculation": {
               "rateMode": "total"
-            }
+            },
+            "startsOn": "2026-10-01",
+            "endsOn": "2027-03-31"
           },
           {
             "id": "ccbasia.eye.visa.signature.dining.2026q3",
@@ -2698,7 +2699,7 @@
           }
         ],
         "baseRatePercent": 0.4,
-        "caveats": "平常基本1X积分按25,000分折HKD100等值0.4%。网购/非接触式付款额外至5X积分相当最高2%回赠，含1X基础积分；额外积分存在计划期上限，回赠一般须以积分兑换。2026年7–9月本地餐饮最高11%的独立活动已结束，不能当当前全年回赠。海外手续费未核实。 卡面为参考官方素材经 AI 整理的横版示意，已去除示例个人资料；不代表银行实际发行的卡面版本。"
+        "caveats": "基础1X积分按25,000分抵HKD100约等值0.4%，实际价值取决于兑换。2026-10-01至2027-03-31升级活动在月签账HKD3,000门槛下提供网购最高5%与拍卡最高3%；额外积分及现金按客户共享额度，详见当前官方条款，不能继续把旧5X/2%当本期活动。7–9月本地餐饮活动已结束。海外手续费未核实。 卡面为参考官方素材经AI整理的横版示意，不代表银行实际发行的卡面版本。"
       },
       "searchTerms": [
         "eye+",
