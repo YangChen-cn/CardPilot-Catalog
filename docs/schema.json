@@ -77,7 +77,14 @@
           "$ref": "#/$defs/catalog"
         },
         "artwork": {
-          "$ref": "#/$defs/asset"
+          "anyOf": [
+            {
+              "$ref": "#/$defs/asset"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "searchTerms": {
           "type": "array",
@@ -409,7 +416,14 @@
           "maxLength": 60
         },
         "logo": {
-          "$ref": "#/$defs/asset"
+          "anyOf": [
+            {
+              "$ref": "#/$defs/asset"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "searchTerms": {
           "type": "array",
