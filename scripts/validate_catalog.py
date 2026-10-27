@@ -118,7 +118,7 @@ def image_dimensions(data: bytes) -> tuple[str, int, int]:
 
 
 def validate_asset(value: object, label: str, root: Path, folder: str) -> None:
-    require(isinstance(value, dict), f"{label} must be an object")
+    if value is None:\n        return  # Artwork may be supplied later; only real assets undergo hash/size checks.\n    require(isinstance(value, dict), f"{label} must be an object")
     check_unknown_keys(value, {"path", "sha256", "contentType"}, label)
     path = value.get("path")
     require(isinstance(path, str) and bool(ASSET_PATH.fullmatch(path)) and path.startswith(f"images/{folder}/"),
