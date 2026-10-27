@@ -118,6 +118,8 @@ def image_dimensions(data: bytes) -> tuple[str, int, int]:
 
 
 def validate_asset(value: object, label: str, root: Path, folder: str) -> None:
+    if value is None:
+        return  # Artwork may be supplied later; only real assets undergo hash/size checks.
     require(isinstance(value, dict), f"{label} must be an object")
     check_unknown_keys(value, {"path", "sha256", "contentType"}, label)
     path = value.get("path")
@@ -174,6 +176,9 @@ def validate_rule(rule: object, label: str, seen: set[str]) -> None:
     for field in ("startsOn", "endsOn"):
         if rule.get(field) is not None:
             parse_date(rule[field], f"{label}/{rule_id}.{field}")
+    if "merchantKeywords" in rule:
+        require(isinstance(rule["merchantKeywords"], str),
+                f"{label}/{rule_id}.merchantKeywords must be a comma-separated string, not an array")
     if rule.get("paymentMethod") not in (None, ""):
         validate_payment_method(rule["paymentMethod"], f"{label}/{rule_id}.paymentMethod")
     calculation = rule.get("calculation")

@@ -32,6 +32,37 @@ def png_1x1() -> bytes:
 
 
 class CardArtworkValidationTests(unittest.TestCase):
+    def test_rejects_merchant_keyword_arrays_before_clients_decode_them(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / "docs"
+            shutil.copytree(DOCS, target)
+            catalog_path = target / "catalog.json"
+            catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+            catalog["products"][0]["catalog"]["rules"][0]["merchantKeywords"] = ["Example shop"]
+            catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            result = subprocess.run(
+                [sys.executable, str(VALIDATOR), str(catalog_path)],
+                capture_output=True, text=True, check=False,
+            )
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("merchantKeywords must be a comma-separated string", result.stdout + result.stderr)
+
+    def test_allows_bank_and_card_images_to_be_added_later(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / "docs"
+            shutil.copytree(DOCS, target)
+            catalog_path = target / "catalog.json"
+            catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+            catalog["banks"][0]["logo"] = None
+            catalog["products"][0]["artwork"] = None
+            catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+            result = subprocess.run(
+                [sys.executable, str(VALIDATOR), str(catalog_path)],
+                capture_output=True, text=True, check=False,
+            )
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_rejects_a_card_that_is_not_1200x756(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             target = Path(tmp) / "docs"
