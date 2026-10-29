@@ -144,7 +144,7 @@ class UsageGuideValidationTests(unittest.TestCase):
                 with self.assertRaises(SystemExit):
                     validate_usage_guide(guide, "usageGuide", {"example.offer.monthly"})
         guide = copy.deepcopy(base)
-        guide["scenarios"] = [dict(base["scenarios"][0], id=f"example.{i}") for i in range(5)]
+        guide["scenarios"] = [dict(base["scenarios"][0], id=f"example.{i}") for i in range(2)]
         with self.assertRaises(SystemExit):
             validate_usage_guide(guide, "usageGuide", {"example.offer.monthly"})
 
