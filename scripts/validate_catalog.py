@@ -155,6 +155,8 @@ def validate_plan(plan: object, label: str, rule_ids: set[str]) -> str:
     require(isinstance(plan_id, str) and bool(plan_id), f"{label}.id must be non-empty")
     require(plan.get("kind") in {"main", "addon"}, f"{label}.kind must be main or addon")
     https(plan.get("sourceURL"), f"{label}.sourceURL")
+    if plan.get("details") is not None:
+        guide_text(plan["details"], f"{label}.details", 250)
     for field in ("applicationStartsOn", "applicationEndsOn"):
         if plan.get(field) is not None:
             parse_date(plan[field], f"{label}.{field}")
@@ -176,6 +178,8 @@ def validate_rule(rule: object, label: str, seen: set[str]) -> None:
     for field in ("startsOn", "endsOn"):
         if rule.get(field) is not None:
             parse_date(rule[field], f"{label}/{rule_id}.{field}")
+    if rule.get("notes") is not None:
+        guide_text(rule["notes"], f"{label}/{rule_id}.notes", 300)
     if "merchantKeywords" in rule:
         require(isinstance(rule["merchantKeywords"], str),
                 f"{label}/{rule_id}.merchantKeywords must be a comma-separated string, not an array")
@@ -200,11 +204,11 @@ def validate_usage_guide(value: object, label: str, offer_ids: set[str]) -> None
         return
     require(isinstance(value, dict), f"{label} must be an object or null")
     check_unknown_keys(value, {"summary", "reviewedOn", "scenarios"}, label)
-    guide_text(value.get("summary"), f"{label}.summary", 480)
+    guide_text(value.get("summary"), f"{label}.summary", 90)
     parse_date(value.get("reviewedOn"), f"{label}.reviewedOn")
     scenarios = value.get("scenarios")
-    require(isinstance(scenarios, list) and 1 <= len(scenarios) <= 12,
-            f"{label}.scenarios must have 1...12 items")
+    require(isinstance(scenarios, list) and 1 <= len(scenarios) <= 4,
+            f"{label}.scenarios must have 1...4 items")
     seen: set[str] = set()
     for index, scenario in enumerate(scenarios):
         item = f"{label}.scenarios[{index}]"
@@ -218,16 +222,16 @@ def validate_usage_guide(value: object, label: str, offer_ids: set[str]) -> None
                 and bool(PRODUCT_ID.fullmatch(scenario_id)) and scenario_id not in seen,
                 f"{item}.id must be unique and stable")
         seen.add(scenario_id)
-        for field, maximum in (("title", 80), ("whenToUse", 300), ("howToUse", 1200)):
+        for field, maximum in (("title", 64), ("whenToUse", 130), ("howToUse", 220)):
             guide_text(scenario.get(field), f"{item}.{field}", maximum)
         for field in ("capNote", "stopAfter"):
             if scenario.get(field) is not None:
-                guide_text(scenario[field], f"{item}.{field}", 400)
+                guide_text(scenario[field], f"{item}.{field}", 120)
         warnings = scenario.get("warnings")
         if warnings is not None:
-            require(isinstance(warnings, list) and len(warnings) <= 8, f"{item}.warnings must have at most 8 items")
+            require(isinstance(warnings, list) and len(warnings) <= 2, f"{item}.warnings must have at most 2 items")
             for warning in warnings:
-                guide_text(warning, f"{item}.warnings[]", 400)
+                guide_text(warning, f"{item}.warnings[]", 100)
         related = scenario.get("relatedOfferIDs")
         require(isinstance(related, list) and len(related) <= 20
                 and all(isinstance(x, str) and x in offer_ids for x in related)
@@ -316,6 +320,9 @@ def main() -> int:
                 f"{product_id}: catalog must not carry artwork")
         https(catalog.get("sourceURL"), f"{product_id}.catalog.sourceURL")
         parse_date(catalog.get("verifiedOn"), f"{product_id}.catalog.verifiedOn")
+        for field, maximum in (("caveats", 180), ("annualFeeNote", 110)):
+            if catalog.get(field) is not None:
+                guide_text(catalog[field], f"{product_id}.catalog.{field}", maximum)
         rules = catalog.get("rules")
         require(isinstance(rules, list), f"{product_id}: catalog.rules must be an array")
         rule_ids: set[str] = set()
