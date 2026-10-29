@@ -18,7 +18,7 @@
 
 ## 当前覆盖
 
-2026-10-27 发布的 `contentVersion: 2026102703` 包含 **8 家银行、22 款产品**：HSBC、BOCHK、BEA、CNCBI、交通银行（香港）、Mox、工银亚洲和建行亚洲。
+2026-10-29 发布的 `contentVersion: 2026102901` 包含 **8 家银行、24 款产品**：HSBC、BOCHK、BEA、CNCBI、交通银行（香港）、Mox、工银亚洲和建行亚洲。
 
 本轮补齐 7 张新卡面及 3 个银行 Logo，所有资源均为真实文件与 SHA-256 引用，没有空图片字段。工银亚洲采用官方卡面裁边；Mox 及建行三款采用参考官方素材经 AI 整理的横版示意，已去掉示例个人资料，**不代表银行实际发行的横版设计**。银行 Logo 均取自官方资源。来源、处理方式及生图提示词见[素材记录](artwork-2026-10-27.md)。
 
@@ -134,3 +134,5 @@ archive/                          历史快照（可选）
 ## 隐私与安全
 
 提交前请检查 diff，确认没有个人信息或凭据。若发现误提交，请立即移除数据并轮换相关凭据；仅删除文件不能清除 Git 历史。安全问题请通过主仓库的 [SECURITY.md](https://github.com/YangChen-cn/CardPilot/blob/main/SECURITY.md) 报告。
+
+SOGO Visa 白金／Signature 独立产品与官方竖版卡面来源见 [核实记录](docs/bochk-sogo-research.md)。
