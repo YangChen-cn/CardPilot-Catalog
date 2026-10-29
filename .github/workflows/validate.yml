@@ -29,9 +29,22 @@ jobs:
         run: python3 scripts/test_validate_catalog.py
       - name: Validate schema, artwork and version
         env:
-          BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event.before }}
+          EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref_name }}
+          BASE_BRANCH: ${{ github.base_ref }}
+          BEFORE_SHA: ${{ github.event.before }}
         run: |
           BASE_FILE=/tmp/base-catalog.json
+          # A feature branch may amend the same unpublished catalog version
+          # across several commits. Compare it with main, not its previous commit.
+          # On main, every published change must increment from the prior commit.
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            BASE_REF="origin/$BASE_BRANCH"
+          elif [ "$REF_NAME" != "main" ]; then
+            BASE_REF="origin/main"
+          else
+            BASE_REF="$BEFORE_SHA"
+          fi
           if [ -z "$BASE_REF" ] || [ "$BASE_REF" = "0000000000000000000000000000000000000000" ]; then
             BASE_REF=HEAD^
           fi
