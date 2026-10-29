@@ -19,6 +19,7 @@
 | `sourceURL` | 可核实的 HTTPS 官方链接 | 不使用搜索结果页、带凭据 URL 或第三方宣传替代官方条款。 |
 | `startsOn`、`endsOn` | `"2026-10-01"` 或未知时 `null` | 不填中文日期、时间戳、空字符串或猜测日期。 |
 | `verifiedOn` | 实际核实日 | 不能代替活动生效日期或个人消费期。 |
+| `products[].usageGuide` | 可选对象，省略或 `null` 表示未提供 | 见[推荐用法接口](usage-guide.md)。不放到 `catalog.rules`；`relatedOfferIDs` 仅引用同产品活动/迎新计划；旧客户端会拒绝此新字段，即使为 `null`。先交付兼容客户端，再填写真实内容。 |
 | `group` | `daily` / `limited` / `merchant` / `welcome` | 显式填写，不依赖活动标题猜分组。 |
 | `kind`（活动） | `cashback` / `welcome` | 不随意增加客户端不认识的值。 |
 | `paymentMethod` 及相关数组 | 校验器列出的 canonical 值 | 云闪付相关统一用 `UnionPay`；不能用 `UnionPay App`。Google Pay 等尚无 canonical 值的条件写入自然语言说明，不能擅造枚举。 |
@@ -35,6 +36,7 @@
 - 迎新申请期与个人消费期分开；互斥方案的银行条件可说明，但不阻止用户手动记录个人状态。
 - 已结束活动保留真实日期，不改成新一期；延期或新批次按已有稳定 ID 约定处理。
 - 未确认的事实保持未知，不能默认 0% 手续费、1:1 汇率、Apple Pay 或合资格。
+- 推荐用法属于 agent 编辑建议，必须记录真实 `reviewedOn`、相关活动 ID 和官方来源；上限及“刷多少可停”写清币种、周期、共享范围与推导前提，不生成个人额度追踪或精确结算模型。未填写时省略字段，不能发布虚构模板。
 
 ## 图片与 Logo
 

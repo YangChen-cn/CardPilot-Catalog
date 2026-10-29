@@ -190,6 +190,62 @@ def validate_rule(rule: object, label: str, seen: set[str]) -> None:
                 validate_payment_method(value, f"{label}/{rule_id}.{field}[]")
 
 
+def guide_text(value: object, label: str, maximum: int) -> None:
+    require(isinstance(value, str) and bool(value.strip()) and len(value) <= maximum,
+            f"{label} must be non-blank text, at most {maximum} characters")
+
+
+def validate_usage_guide(value: object, label: str, offer_ids: set[str]) -> None:
+    if value is None:
+        return
+    require(isinstance(value, dict), f"{label} must be an object or null")
+    check_unknown_keys(value, {"summary", "reviewedOn", "scenarios"}, label)
+    guide_text(value.get("summary"), f"{label}.summary", 480)
+    parse_date(value.get("reviewedOn"), f"{label}.reviewedOn")
+    scenarios = value.get("scenarios")
+    require(isinstance(scenarios, list) and 1 <= len(scenarios) <= 12,
+            f"{label}.scenarios must have 1...12 items")
+    seen: set[str] = set()
+    for index, scenario in enumerate(scenarios):
+        item = f"{label}.scenarios[{index}]"
+        require(isinstance(scenario, dict), f"{item} must be an object")
+        check_unknown_keys(scenario, {
+            "id", "title", "whenToUse", "howToUse", "capNote", "stopAfter", "warnings",
+            "relatedOfferIDs", "sourceURLs", "startsOn", "endsOn",
+        }, item)
+        scenario_id = scenario.get("id")
+        require(isinstance(scenario_id, str) and len(scenario_id) <= 128
+                and bool(PRODUCT_ID.fullmatch(scenario_id)) and scenario_id not in seen,
+                f"{item}.id must be unique and stable")
+        seen.add(scenario_id)
+        for field, maximum in (("title", 80), ("whenToUse", 300), ("howToUse", 1200)):
+            guide_text(scenario.get(field), f"{item}.{field}", maximum)
+        for field in ("capNote", "stopAfter"):
+            if scenario.get(field) is not None:
+                guide_text(scenario[field], f"{item}.{field}", 400)
+        warnings = scenario.get("warnings")
+        if warnings is not None:
+            require(isinstance(warnings, list) and len(warnings) <= 8, f"{item}.warnings must have at most 8 items")
+            for warning in warnings:
+                guide_text(warning, f"{item}.warnings[]", 400)
+        related = scenario.get("relatedOfferIDs")
+        require(isinstance(related, list) and len(related) <= 20
+                and all(isinstance(x, str) and x in offer_ids for x in related)
+                and len(set(related)) == len(related),
+                f"{item}.relatedOfferIDs must uniquely reference this product's rules or welcome plans")
+        sources = scenario.get("sourceURLs")
+        require(isinstance(sources, list) and 1 <= len(sources) <= 6, f"{item}.sourceURLs must have 1...6 items")
+        for source in sources:
+            guide_text(source, f"{item}.sourceURLs[]", 2048)
+            https(source, f"{item}.sourceURLs[]")
+        require(len(set(sources)) == len(sources), f"{item}.sourceURLs must be unique")
+        for field in ("startsOn", "endsOn"):
+            if scenario.get(field) is not None:
+                parse_date(scenario[field], f"{item}.{field}")
+        if scenario.get("startsOn") is not None and scenario.get("endsOn") is not None:
+            require(scenario["startsOn"] <= scenario["endsOn"], f"{item}: invalid date range")
+
+
 def main() -> int:
     args = sys.argv[1:]
     base_path: Path | None = None
@@ -240,7 +296,7 @@ def main() -> int:
     for index, product in enumerate(products):
         label = f"products[{index}]"
         require(isinstance(product, dict), f"{label} must be an object")
-        check_unknown_keys(product, {"id", "bankID", "artwork", "baseRewardVerified", "welcomePlans", "catalog", "searchTerms"}, label)
+        check_unknown_keys(product, {"id", "bankID", "artwork", "baseRewardVerified", "welcomePlans", "catalog", "searchTerms", "usageGuide"}, label)
         product_id = product.get("id")
         require(isinstance(product_id, str) and bool(PRODUCT_ID.fullmatch(product_id)) and product_id not in seen,
                 f"{label}.id must be unique and stable")
@@ -270,6 +326,7 @@ def main() -> int:
             plan_id = validate_plan(plan, f"{product_id}.welcomePlans[{len(plan_ids)}]", rule_ids)
             require(plan_id not in plan_ids, f"{product_id}: duplicate welcome plan id {plan_id}")
             plan_ids.add(plan_id)
+        validate_usage_guide(product.get("usageGuide"), f"{product_id}.usageGuide", rule_ids | plan_ids)
     walk_keys(data)
     print(f"valid catalog V2: {len(banks)} banks, {len(products)} products, contentVersion {version}, publishedAt {data['publishedAt']}")
     return 0
