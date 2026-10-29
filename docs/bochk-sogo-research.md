@@ -1,6 +1,6 @@
 # BOCHK SOGO Visa（2026-10-29 核实）
 
-独立产品：`bochk.sogo.visa.platinum`、`bochk.sogo.visa.signature`。不合并不同等级。8家银行／24款产品，版本2026102901。
+独立产品：`bochk.sogo.visa.platinum`、`bochk.sogo.visa.signature`。不合并不同等级。8家银行／24款产品，版本2026102902。
 
 来源：
 - [官方产品页](https://www.bochk.com/tc/creditcard/details/cobrand/cobrand/sogo.html)
@@ -14,4 +14,18 @@
 - https://www.bochk.com/dam/boccreditcard/sogocard/images/Cardface-VP.png
 - https://www.bochk.com/dam/boccreditcard/sogocard/images/Cardface-VS.png
 
-两张为官方404×642竖版无个人字段素材；无重绘，无拉伸或裁去卡面。等比缩放后居中置于透明1200×756公共资源画布，去元数据并生成SHA-256；透明两侧属于布局画布，不是白色图片边框。银行Logo复用现有资源。
+用户明确要求真正横版，2026102902取代2026102901的竖图透明画布方案。使用内置imagegen分别参考官方竖版重排为横版示意，再标准化1200×756、去元数据和更新SHA-256。保留白金银白彩带、Signature蓝底银色飘带及银行、SOGO、Visa等级，无个人字段。产品说明明确标记AI示意，不称官方发行版；官方Logo资源未改。原始生成文件保留在本机generated_images目录，最终资源在docs/images/cards。
+
+## 生图提示词
+
+### platinum
+
+```text
+Use case: product-mockup. Transform the referenced official BOCHK SOGO Visa platinum vertical card into a true HORIZONTAL landscape credit card illustration, width:height 1.587:1. The entire output canvas MUST be the card front edge-to-edge, no surrounding space, no portrait card pasted inside landscape, no mockup background, no perspective, shadow, reflection or padding. Recompose the design horizontally rather than rotating lettering. Preserve BANK OF CHINA branding upper left and SOGO HONG KONG upper right, Visa Platinum lower right, metallic chip on left. Preserve silver-white background and colorful teal red pink blue orange curved stripes from reference. Crisp restrained faithful flat card illustration. No account numbers, names, expiry, security codes or invented benefits. All writing upright and readable. Output single horizontal card only.
+```
+
+### signature
+
+```text
+Use case: product-mockup. Transform the referenced official BOCHK SOGO Visa signature vertical card into a true HORIZONTAL landscape credit card illustration, width:height 1.587:1. The entire output canvas MUST be the card front edge-to-edge, no surrounding space, no portrait card pasted inside landscape, no mockup background, no perspective, shadow, reflection or padding. Recompose the design horizontally rather than rotating lettering. Preserve BANK OF CHINA branding upper left and SOGO HONG KONG upper right, Visa Signature lower right, metallic chip on left. Preserve deep blue background and white silver cyan curved stripes from reference. Crisp restrained faithful flat card illustration. No account numbers, names, expiry, security codes or invented benefits. All writing upright and readable. Output single horizontal card only.
+```
