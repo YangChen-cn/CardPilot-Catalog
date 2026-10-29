@@ -21,11 +21,11 @@
 
 ## Size and quality limits (enforced by validator/schema)
 - `catalog.caveats` <= 180 Chinese characters; `annualFeeNote` <= 110; `rules[].notes` <= 300; `welcomePlans[].details` <= 250.
-- `usageGuide.summary` <= 90; 1–4 truly useful scenarios, not one for every offer by default.
+- `usageGuide.summary` <= 90; publish exactly **one holistic card-level scenario** for each product. A promo is supporting evidence, NOT a separately generated usage guide. Associate all cited offer IDs with that one strategy.
 - Scenario `title` <= 64, `whenToUse` <= 130, `howToUse` <= 220; `capNote` and `stopAfter` <= 120 each.
 - At most **2** scenario warnings, <= 100 characters each. If there are no genuinely important warnings, omit the field.
 - Avoid mechanically filling `capNote`, `stopAfter` or `warnings`. Only calculate spend-to-cap when the rate, scope and reward period are unambiguous and no shared/used cap is assumed.
-- Every guide scenario includes official HTTPS source(s) and IDs from the *same product*. Avoid invented dates, rewards, or links. Historical benefits should not be included as present-day scenarios.
+- The one guide scenario includes official HTTPS source(s) and (when relevant) multiple IDs from the *same product*. Avoid invented dates, rewards, or links. Historical benefits should not be included as present-day scenarios.
 - Re-evaluate guides when a referenced offer changes. All linked IDs still existing is necessary but **not sufficient** for semantic correctness.
 
 ## Research and review
