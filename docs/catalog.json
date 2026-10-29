@@ -3792,7 +3792,7 @@
             "startsOn": null,
             "endsOn": "2026-12-31",
             "sourceURL": "https://www.bochk.com/dam/boccreditcard/sogo_doc/sogocard_tnc_tc.pdf",
-            "notes": "为即时折扣，并非账后现金回赠；须全额付款，手机付款需出示卡片。周年庆及其他指定推广、购物袋收费除外。",
+            "notes": "为即时折扣，并非账后现金回赠；须全额付款，手机付款前需出示应用内已加入的卡片。周年庆及其他指定推广、购物袋收费除外。",
             "enabled": false
           },
           {
@@ -3862,7 +3862,7 @@
             "id": "guide.bochk.sogo.visa.platinum.freshmart.2026",
             "title": "Freshmart星期一购物5%折扣",
             "whenToUse": "在指定崇光商户和活动时段购物。",
-            "howToUse": "为即时折扣，并非账后现金回赠；须全额付款，手机付款需出示卡片；周年庆及其他指定推广、购物袋收费除外。",
+            "howToUse": "为即时折扣，并非账后现金回赠；须全额付款，手机付款前需出示应用内已加入的卡片；周年庆及其他指定推广、购物袋收费除外。",
             "relatedOfferIDs": [
               "bochk.sogo.visa.platinum.freshmart.2026"
             ],
@@ -3964,7 +3964,7 @@
             "startsOn": null,
             "endsOn": "2026-12-31",
             "sourceURL": "https://www.bochk.com/dam/boccreditcard/sogo_doc/sogocard_tnc_tc.pdf",
-            "notes": "为即时折扣，并非账后现金回赠；须全额付款，手机付款需出示卡片。周年庆及其他指定推广、购物袋收费除外。",
+            "notes": "为即时折扣，并非账后现金回赠；须全额付款，手机付款前需出示应用内已加入的卡片。周年庆及其他指定推广、购物袋收费除外。",
             "enabled": false
           },
           {

@@ -75,3 +75,9 @@
 唯一使用者于2026-10-29明确不要求旧版兼容，并要求删除用户界面的AI卡面标注；按当前客户端验证后发布。本轮提交是文案精简与已证实事实修正，不声称91条全部银行条件重新认证。尚未完整核验的字段继续在 Catalog #7 跟进，不把其余内容的发布写成该 issue 已完成。
 
 补充建行[飞常赏官方条款](https://www.asia.ccb.com/hongkong_tc/personal/credit_cards/promotions/overseas_spending/index.html)第3–5条：登记一张卡后名下其余卡自动登记，签账及上限按持卡人合并；已补 TRAVO 和银联两条 notes 及银联指南上限。TRAVO 登记可经网银或手机银行，不限 App，已纠正文案。
+
+### 收口补查
+
+另打开 SOGO 产品条款第 II–V 项及[生日条款](https://www.bochk.com/dam/boccreditcard/cbc_pdf/sogoebday_TC.pdf)，对购物/Freshmart/日本/餐饮、Signature手机5%及生日会员/直销/每年一次条件作补查。Freshmart措辞明确为“付款前出示手机应用内已加入的卡”，不要求拿出实体卡。TRAVO[产品页](https://www.asia.ccb.com/hongkong_tc/personal/credit_cards/travoworld.html)可读，登记渠道已修正；本轮不是全部字段审计。
+
+无法读取的来源：工银缴税 PDF https://v.icbc.com.cn/userfiles/resources/icbc/haiwai/asia/download/tc/2026/tax_payment_cash_rebate_tnc_2610_tc.pdf 返回403；交银 Go-Goal/大湾区迎新、学费、交通及季度奖赏的 catalog.sourceURL 多份 PDF 返回 TLS EOF。可读 Go-Goal 产品页只支持5.6%及首HK$2,000等要点，不能代替完整条款。工银费用和这些活动的剩余排除项未证实，保留未知并在 #7 跟进。
