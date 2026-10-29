@@ -5,11 +5,11 @@
 ## Goal and language
 - Write for a cardholder making a payment decision, not for a developer auditing a database.
 - Use concise, plain Chinese in user-facing fields. Lead with **how to use**, **reward**, **threshold**, **cap**, **registration**, and **expiry**.
-- Never put internal status such as "尚待完整核实", "本次整理", "此处不自动计算", "不视为免年费", schema history, or AI/artwork production notes in `catalog.caveats`, `catalog.rules[].notes` or `usageGuide`.
+- Never put internal status such as "尚待完整核实", "本次整理", "此处不自动计算", "不视为免年费", schema history or schema implementation notes in `catalog.caveats`, `catalog.rules[].notes` or `usageGuide`.
 - Do not repeat an umbrella disclaimer ("以银行为准") in each field. Provide the actual official sourceURL, and preserve material eligibility/uncertainty in a precise, actionable phrase only where needed.
 - Never hide an important exclusion, enrollment requirement, shared cap, transaction method, currency requirement, period, new-customer condition or reward form just to shorten copy.
 - Separate a **confirmed negative condition** ("微信支付不适用") from **missing data** ("未收录外币手续费"). Missing fee information is not permission to claim zero fees. Keep unknown facts out of positive recommendations.
-- The official card face provenance belongs in artwork documentation, not the spending guide.
+- Keep card artwork provenance in repository artwork documentation only. On 2026-10-29 the sole user explicitly requested no AI artwork labels in product descriptions, guides or app UI; this supersedes earlier labeling requirements.
 
 ## Structured fact protection
 - For copy-only work, do **not** change `id`, `kind`, `group`, `ratePercent`, `bonusHKD`, `capHKD`, dates, `calculation`, `sourceURL`, `verifiedOn`, `welcomePlans[].ruleIDs` or other calculation/eligibility fields. Require a separate official evidence check and explicitly reviewed diff to change them.
@@ -33,5 +33,5 @@
 2. Preserve facts in the structured model, simplify only user-visible prose. If bank sources conflict, STOP on factual change and create a small follow-up Issue listing the exact product/rule and two sources.
 3. Compare before/after IDs, rates, cap, amounts, periods, merchant lists, calculation conditions, sources and image hashes. A copy-only PR must have a zero non-editorial diff.
 4. Run `python3 scripts/test_validate_catalog.py`, `python3 scripts/validate_catalog.py docs/catalog.json`, and `git diff --check`. With a changed catalog, pass `--base` pointing to main's prior snapshot to verify contentVersion increase.
-5. **Publishing compatibility gate:** a client older than the `usageGuide` change rejects the new field. Do not merge or publish new guides until a compatible CardPilot client is shipped or compatibility is explicitly resolved. Keep this PR as draft until then.
+5. **Client validation:** run CardPilot decoding and cache tests against the release snapshot. On 2026-10-29 the sole user explicitly waived old-client compatibility; do not block publication on legacy compatibility or add version-specific endpoints. Current client validation remains required.
 6. Summarize what was code-verified versus what still needs bank-side manual evidence. Never mark schema validation as independent confirmation of bank terms.
