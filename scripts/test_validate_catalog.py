@@ -122,6 +122,32 @@ class UsageGuideValidationTests(unittest.TestCase):
                                     capture_output=True, text=True, check=False)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
+    def test_compact_editorial_contract_rejects_verbose_guides(self) -> None:
+        base = self.example()
+        cases = [
+            ("summary", "x" * 91),
+            ("title", "x" * 65),
+            ("whenToUse", "x" * 131),
+            ("howToUse", "x" * 221),
+            ("capNote", "x" * 121),
+            ("stopAfter", "x" * 121),
+            ("warnings", ["x" * 101]),
+            ("warnings", ["one", "two", "three"]),
+        ]
+        for field, value in cases:
+            with self.subTest(field=field, value=str(value)[:20]):
+                guide = copy.deepcopy(base)
+                if field == "summary":
+                    guide[field] = value
+                else:
+                    guide["scenarios"][0][field] = value
+                with self.assertRaises(SystemExit):
+                    validate_usage_guide(guide, "usageGuide", {"example.offer.monthly"})
+        guide = copy.deepcopy(base)
+        guide["scenarios"] = [dict(base["scenarios"][0], id=f"example.{i}") for i in range(5)]
+        with self.assertRaises(SystemExit):
+            validate_usage_guide(guide, "usageGuide", {"example.offer.monthly"})
+
     def test_rejects_invalid_or_untraceable_scenarios(self) -> None:
         cases = {
             "unknown field": ("stopAmount", 2000),
