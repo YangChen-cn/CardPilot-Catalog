@@ -207,8 +207,8 @@ def validate_usage_guide(value: object, label: str, offer_ids: set[str]) -> None
     guide_text(value.get("summary"), f"{label}.summary", 90)
     parse_date(value.get("reviewedOn"), f"{label}.reviewedOn")
     scenarios = value.get("scenarios")
-    require(isinstance(scenarios, list) and 1 <= len(scenarios) <= 4,
-            f"{label}.scenarios must have 1...4 items")
+    require(isinstance(scenarios, list) and len(scenarios) == 1,
+            f"{label}.scenarios must have exactly 1 card-level strategy")
     seen: set[str] = set()
     for index, scenario in enumerate(scenarios):
         item = f"{label}.scenarios[{index}]"
